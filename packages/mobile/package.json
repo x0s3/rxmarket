@@ -2,6 +2,11 @@
   "name": "mobile",
   "version": "0.0.1",
   "private": false,
+  "author": {
+    "name": "x0s3",
+    "email": "x0s3.prog@gmail.com"
+  },
+  "homepage": "https://github.com/x0s3/rxmarket",
   "scripts": {
     "start": "react-native start",
     "test": "jest",

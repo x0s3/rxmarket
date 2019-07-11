@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "x0s3 <x0s3.prog@gmail.com>",
-  "homepage": "",
+  "homepage": "https://github.com/x0s3/rxmarket",
   "license": "ISC",
-  "main": "lib/core.js",
+  "main": "dist/index.js",
   "directories": {
-    "lib": "lib",
+    "src": "src",
+    "dist": "dist",
     "test": "__tests__"
   },
   "files": [

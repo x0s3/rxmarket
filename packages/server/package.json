@@ -11,7 +11,7 @@
     "Marble.js"
   ],
   "license": "ISC",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "directories": {
     "src": "src",
     "dist": "dist",
