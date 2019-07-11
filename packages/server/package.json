@@ -22,6 +22,7 @@
     "dist"
   ],
   "scripts": {
+    "lint": "tslint -p .",
     "build": "yarn clear && tsc",
     "clear": "rimraf dist",
     "start:dev": "ts-node ./src/server.ts",

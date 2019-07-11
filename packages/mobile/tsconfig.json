@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "noEmit": false,
+    "allowJs": false,
+    "declaration": true,
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "typeRoots": ["../../node_modules/@types"]
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"]
+}

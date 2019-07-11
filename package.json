@@ -11,6 +11,9 @@
   ],
   "scripts": {
     "dev:mobile": "lerna run start --scope mobile --stream",
+    "dev:server": "lerna run start:dev --scope server --stream",
+    "lint:mobile": "lerna run lint --scope mobile --stream",
+    "lint:server": "lerna run lint --scope server --stream",
     "build:server": "lerna run build --scope server --stream",
     "prod:server": "lerna run start:prod --scope server --stream",
     "open:ios": "open packages/mobile/ios/rxmarket.xcworkspace/"
@@ -19,6 +22,7 @@
     "lerna": "^3.15.0",
     "rxjs-tslint-rules": "^4.24.3",
     "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "tslint-react-hooks": "^2.1.1",

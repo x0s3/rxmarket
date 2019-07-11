@@ -1,26 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, { Fragment } from 'react';
 import {
   SafeAreaView,
-  StyleSheet,
   ScrollView,
-  View,
+  StatusBar,
+  StyleSheet,
   Text,
-  StatusBar
+  View
 } from 'react-native';
-
 import {
-  Header,
-  LearnMoreLinks,
   Colors,
   DebugInstructions,
+  Header,
+  LearnMoreLinks,
   ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen';
 
