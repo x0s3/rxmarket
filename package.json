@@ -10,8 +10,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build:server":"lerna run build --scope server --stream",
-    "prod:server":"lerna run start:prod --scope server --stream"
+    "dev:mobile": "lerna run start --scope mobile --stream",
+    "build:server": "lerna run build --scope server --stream",
+    "prod:server": "lerna run start:prod --scope server --stream",
+    "open:ios": "open packages/mobile/ios/rxmarket.xcworkspace/"
   },
   "devDependencies": {
     "lerna": "^3.15.0",
