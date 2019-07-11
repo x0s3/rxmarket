@@ -10,7 +10,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build:server":"lerna run build --scope server"
+    "build:server":"lerna run build --scope server --stream",
+    "prod:server":"lerna run start:prod --scope server --stream"
   },
   "devDependencies": {
     "lerna": "^3.15.0",
