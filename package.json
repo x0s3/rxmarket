@@ -1,0 +1,24 @@
+{
+  "name": "root",
+  "private": true,
+  "license": "ISC",
+  "author": {
+    "name": "x0s3",
+    "email": "x0s3.prog@gmail.com"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:server":"lerna run build --scope server"
+  },
+  "devDependencies": {
+    "lerna": "^3.15.0",
+    "rxjs-tslint-rules": "^4.24.3",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
+    "tslint-react-hooks": "^2.1.1",
+    "typescript": "^3.5.3"
+  }
+}

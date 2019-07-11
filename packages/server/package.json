@@ -1,0 +1,44 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "x0s3 <x0s3.prog@gmail.com>",
+  "homepage": "",
+  "keywords": [
+    "Functional",
+    "Reactive",
+    "RxJS",
+    "Marble.js"
+  ],
+  "license": "ISC",
+  "main": "dist/index.js",
+  "directories": {
+    "src": "src",
+    "dist": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn clear && tsc",
+    "clear": "rimraf dist",
+    "start:dev": "ts-node ./src/server.ts",
+    "start:prod": "node -r ./tsconfig-paths.js dist/index.js",
+    "watch": "nodemon --watch src --ext ts --ignore '*.spec.ts' --exec yarn start:dev",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@marblejs/core": "^2.3.1",
+    "@marblejs/middleware-body": "^2.3.1",
+    "@marblejs/middleware-logger": "^2.3.1",
+    "rxjs": "^6.5.2",
+    "tsconfig-paths": "^3.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.3.0"
+  }
+}
