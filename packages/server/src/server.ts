@@ -1,10 +1,9 @@
-import { createServer } from '@marblejs/core';
+import { createContext } from '@marblejs/core';
+import { Server } from './connection/server';
 import httpListener from './http.listener';
 
-export const server = createServer({
-  port: 1337,
-  hostname: '127.0.0.1',
-  httpListener
-});
+const bootstrap = async () => {
+  await Server.create(httpListener.run(createContext()));
+};
 
-server.run();
+bootstrap();

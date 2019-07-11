@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev:mobile": "lerna run start --scope mobile --stream",
-    "dev:server": "lerna run start:dev --scope server --stream",
+    "dev:server": "lerna exec --scope server -- yarn start:dev --stream",
     "lint:mobile": "lerna run lint --scope mobile --stream",
     "lint:server": "lerna run lint --scope server --stream",
     "build:server": "lerna run build --scope server --stream",

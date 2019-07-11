@@ -1,8 +1,6 @@
-import { r } from '@marblejs/core';
+import { EffectFactory } from '@marblejs/core';
 import { mapTo } from 'rxjs/operators';
 
-export const api$ = r.pipe(
-  r.matchPath('/'),
-  r.matchType('GET'),
-  r.useEffect(req$ => req$.pipe(mapTo({ body: 'Hello, world!' })))
-);
+export const api$ = EffectFactory.matchPath('/')
+  .matchType('GET')
+  .use(req$ => req$.pipe(mapTo({ body: `Hello, world! 👻` })));
