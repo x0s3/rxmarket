@@ -1,0 +1,15 @@
+export const AUTH_SCREEN = 'AUTH_SCREEN';
+
+export const RESET_PASSWORD_SCREEN = 'RESET_PASSWORD_SCREEN';
+
+export const HOME_SCREEN = 'HOME_SCREEN';
+
+export const SEARCH_SCREEN = 'SEARCH_SCREEN';
+
+export const BILLS_SCREEN = 'BILLS_SCREEN';
+
+export const PROFILE_SCREEN = 'PROFILE_SCREEN';
+
+export const RESTAURANT_SCREEN = 'RESTAURANT_SCREEN';
+
+export const ORDER_SCREEN = 'ORDER_SCREEN';

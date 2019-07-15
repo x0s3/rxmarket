@@ -15,8 +15,13 @@
     "lib"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "yarn clear & tsc",
+    "clear": "rimraf dist"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "tsconfig-paths": "^3.8.0"
+  }
 }
