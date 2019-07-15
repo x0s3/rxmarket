@@ -13,13 +13,17 @@
     "lint": "tslint -p ."
   },
   "dependencies": {
-    "react": "16.8.6",
-    "react-native": "0.60.3",
+    "@eva-design/eva": "^1.0.1",
+    "react": "^16.8.6",
+    "react-native": "^0.60.3",
+    "react-native-ui-kitten": "^4.1.0",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
     "redux-observable": "^1.1.0",
     "reselect": "^4.0.0",
-    "rxjs": "^6.5.2"
+    "rxjs": "^6.5.2",
+    "typesafe-actions": "^4.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
