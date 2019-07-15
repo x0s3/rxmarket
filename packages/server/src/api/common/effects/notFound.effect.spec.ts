@@ -1,6 +1,6 @@
 import { createContext } from '@marblejs/core';
 import * as request from 'supertest';
-import httpListener from '../../../http.listener';
+import httpListener from '../../../app';
 
 describe('notFoundEffect$', () => {
   const app = httpListener.run(createContext());

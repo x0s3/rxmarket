@@ -11,7 +11,7 @@
     "Marble.js"
   ],
   "license": "ISC",
-  "main": "dist/server.js",
+  "main": "dist/index.js",
   "directories": {
     "src": "src",
     "dist": "dist",
@@ -25,10 +25,10 @@
     "lint": "tslint -p .",
     "build": "yarn clear && tsc",
     "clear": "rimraf dist",
-    "start:dev": "ts-node ./src/server.ts",
-    "start:prod": "node -r ./tsconfig-paths.js dist/server.js",
+    "start:dev": "ts-node ./src/index.ts",
+    "start:prod": "node -r ./tsconfig-paths.js dist/index.js",
     "watch": "nodemon --watch src --ext ts --ignore '*.spec.ts' --exec yarn start:dev",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "dependencies": {
     "@marblejs/core": "^2.3.1",
