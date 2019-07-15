@@ -9,7 +9,7 @@
     "noImplicitAny": false,
     "noEmitOnError": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "pretty": true,
