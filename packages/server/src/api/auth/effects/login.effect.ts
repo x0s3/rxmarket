@@ -2,7 +2,7 @@ import { HttpEffect, HttpError, HttpStatus, use } from '@marblejs/core';
 import { requestValidator$, t } from '@marblejs/middleware-io';
 import { generateToken } from '@marblejs/middleware-jwt';
 import { of, throwError } from 'rxjs';
-import { catchError, map, mergeMap } from 'rxjs/operators';
+import { catchError, map, mergeMap, pluck } from 'rxjs/operators';
 import { Config } from '../../../config';
 import { neverNullable } from '../../../util';
 import { UsersDao } from '../../users';
@@ -20,7 +20,7 @@ export const loginEffect$: HttpEffect = req$ =>
     use(validator$),
     mergeMap(req =>
       of(req).pipe(
-        map(re => re.body),
+        pluck('body'),
         mergeMap(UsersDao.findByCredentials),
         mergeMap(neverNullable),
         map(generateTokenPayload),

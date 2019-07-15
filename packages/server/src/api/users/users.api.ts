@@ -7,6 +7,6 @@ export const getMe$ = EffectFactory.matchPath('/me')
   .use(getMeEffect$);
 
 export const users$ = combineRoutes('/users', {
-  effects: [getMe$],
-  middlewares: [authorize$]
+  middlewares: [authorize$],
+  effects: [getMe$]
 });
