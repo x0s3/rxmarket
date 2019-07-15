@@ -36,10 +36,12 @@
     "@marblejs/middleware-cors": "^2.3.1",
     "@marblejs/middleware-logger": "^2.3.1",
     "chalk": "^2.4.2",
+    "mongoose": "^5.6.4",
     "rxjs": "^6.5.2",
     "tsconfig-paths": "^3.8.0"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.5.8",
     "@types/supertest": "^2.0.8",
     "nodemon": "^1.19.1",
     "rimraf": "^2.6.3",
