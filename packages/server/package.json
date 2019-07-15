@@ -28,7 +28,7 @@
     "start:dev": "ts-node ./src/server.ts",
     "start:prod": "node -r ./tsconfig-paths.js dist/server.js",
     "watch": "nodemon --watch src --ext ts --ignore '*.spec.ts' --exec yarn start:dev",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "jest"
   },
   "dependencies": {
     "@marblejs/core": "^2.3.1",
@@ -39,8 +39,11 @@
     "tsconfig-paths": "^3.8.0"
   },
   "devDependencies": {
+    "@types/supertest": "^2.0.8",
     "nodemon": "^1.19.1",
     "rimraf": "^2.6.3",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0"
   }
 }

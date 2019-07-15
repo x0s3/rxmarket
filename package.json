@@ -14,6 +14,8 @@
     "dev:server": "lerna exec --scope server -- yarn start:dev --stream",
     "lint:mobile": "lerna run lint --scope mobile --stream",
     "lint:server": "lerna run lint --scope server --stream",
+    "test:server": "lerna exec --scope server -- yarn test",
+    "test:mobile": "lerna exec --scope mobile -- yarn test",
     "build:server": "lerna run build --scope server --stream",
     "prod:server": "lerna run start:prod --scope server --stream",
     "open:ios": "open packages/mobile/ios/rxmarket.xcworkspace/"
