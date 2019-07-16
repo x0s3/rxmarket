@@ -2,8 +2,8 @@ import chalk from 'chalk';
 import { createServer, IncomingMessage, ServerResponse } from 'http';
 
 export namespace Server {
-  const host: string = '127.0.0.1';
-  const port: number = 1337;
+  const host: string = 'localhost';
+  const port: number = 3000;
 
   const onListen = () => {
     console.info(chalk.green('[server] running'), `@ http://${host}:${port}/`);

@@ -12,6 +12,7 @@
   "scripts": {
     "dev:mobile": "lerna run start --scope mobile --stream",
     "dev:server": "lerna exec --scope server -- yarn start:dev --stream",
+    "dev:server-watch": "lerna exec --scope server -- yarn watch --stream",
     "lint:mobile": "lerna run lint --scope mobile --stream",
     "lint:server": "lerna run lint --scope server --stream",
     "test:server": "lerna exec --scope server -- yarn test",
