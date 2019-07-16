@@ -38,6 +38,7 @@
     "@marblejs/middleware-jwt": "^2.3.1",
     "@marblejs/middleware-logger": "^2.3.1",
     "bcrypt": "^3.0.6",
+    "core": "0.0.0",
     "chalk": "^2.4.2",
     "faker": "^4.1.0",
     "mongoose": "^5.6.4",

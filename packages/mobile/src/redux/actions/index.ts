@@ -1,1 +1,1 @@
-export * from '.';
+export * from './auth.actions';

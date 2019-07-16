@@ -8,7 +8,11 @@ export function configureStore(): Store {
   const epicMiddleware = createEpicMiddleware({
     dependencies: {
       getJSON: ajax.getJSON,
-      baseURL: `https://api.chucknorris.io/jokes`
+      post: ajax.post,
+      put: ajax.put,
+      delete: ajax.delete,
+      patch: ajax.patch,
+      baseURL: `USE ENDPOINT ENVS`
     }
   });
 
