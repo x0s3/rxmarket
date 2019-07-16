@@ -5,5 +5,5 @@ export const ENV = {
   DB_URL_MAIN: 'mongodb://localhost:27017/rxmarket',
   DB_URL_TEST: 'mongodb://localhost:27017/rxmarkettest',
   LOG_LEVEL: 'dev',
-  JWT_SECRET: 'secret-key'
+  JWT_SECRET: 'uzantoj'
 };

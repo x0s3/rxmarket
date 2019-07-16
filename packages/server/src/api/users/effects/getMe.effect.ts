@@ -10,7 +10,11 @@ export const getMeEffect$: HttpEffect = req$ =>
     mergeMap(UsersDao.findById),
     mergeMap(neverNullable),
     map(user => ({ body: user })),
-    catchError(() =>
-      throwError(new HttpError('User does not exist', HttpStatus.NOT_FOUND))
+    catchError(err =>
+      throwError(() =>
+        err instanceof HttpError
+          ? err
+          : new HttpError('User does not exist', HttpStatus.NOT_FOUND)
+      )
     )
   );
