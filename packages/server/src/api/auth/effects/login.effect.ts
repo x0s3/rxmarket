@@ -10,7 +10,7 @@ import { generateTokenPayload } from '../helpers';
 
 const validator$ = requestValidator$({
   body: t.type({
-    login: t.string,
+    email: t.string,
     password: t.string
   })
 });

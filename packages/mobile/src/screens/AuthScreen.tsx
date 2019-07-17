@@ -12,6 +12,7 @@ import {
 } from 'react-native-ui-kitten';
 import { useDispatch as useReduxAction } from 'react-redux';
 import { AuthForm, ScrollableAvoidKeyboard, textStyle } from '../components';
+import { signIn } from '../redux/actions/auth.actions';
 
 interface ComponentProps {
   onSignInPress: (formData: { email: string; password: string }) => void;
@@ -23,7 +24,11 @@ export type AuthViewProps = ThemedComponentProps & ComponentProps;
 
 const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
   const dispatch = useReduxAction();
-  const onSignIn = useCallback(() => dispatch(''), [dispatch]);
+  const onSignIn = useCallback(
+    () =>
+      dispatch(signIn.request({ email: 'xose@xose.com', password: 'xose' })),
+    [dispatch]
+  );
 
   return (
     <ApplicationProvider mapping={mapping} theme={darkTheme}>
@@ -46,7 +51,7 @@ const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
             style={themedStyle.signInButton}
             textStyle={textStyle.button}
             size={'giant'}
-            disabled={true}
+            disabled={false}
             onPress={onSignIn}
           >
             SIGN IN

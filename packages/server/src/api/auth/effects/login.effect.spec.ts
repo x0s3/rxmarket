@@ -42,7 +42,7 @@ describe('Login effect', () => {
   test('POST /api/v1/auth/login returns 400 status if "password" is not provided', async () =>
     request(app)
       .post('/api/v1/auth/login')
-      .send({ login: 'test' })
+      .send({ email: 'test' })
       .expect(400, {
         error: {
           status: 400,
