@@ -3,17 +3,22 @@ import { LoginCredentials } from '../../auth';
 import { UsersDao } from './users.dao';
 
 describe('Users DAO', () => {
-  test('#findByCredentials finds user by credentials', async (done) => {
+  test('#findByCredentials finds user by credentials', async done => {
     // given
     const user = await mockUser();
-    const credentials: LoginCredentials = { login: user.email!, password: user.password! };
+    const credentials: LoginCredentials = {
+      email: user.email!,
+      password: user.password!
+    };
 
     // when
     const result$ = UsersDao.findByCredentials(credentials);
 
     // then
     result$.subscribe(result => {
-      if (!result) { return fail('User should be found'); }
+      if (!result) {
+        return fail('User should be found');
+      }
 
       expect(result.firstName).toEqual(user.firstName);
       expect(result.lastName).toEqual(user.lastName);
@@ -24,7 +29,7 @@ describe('Users DAO', () => {
     });
   });
 
-  test('#findById finds user by given ID', async (done) => {
+  test('#findById finds user by given ID', async done => {
     // given
     const user = await mockUser();
 
@@ -33,7 +38,9 @@ describe('Users DAO', () => {
 
     // then
     result$.subscribe(result => {
-      if (!result) { return fail('User should be found'); }
+      if (!result) {
+        return fail('User should be found');
+      }
 
       expect(result.firstName).toEqual(user.firstName);
       expect(result.lastName).toEqual(user.lastName);
@@ -44,7 +51,7 @@ describe('Users DAO', () => {
     });
   });
 
-  test('#findByIdPublic finds user by given ID in public scope', async (done) => {
+  test('#findByIdPublic finds user by given ID in public scope', async done => {
     // given
     const user = await mockUser();
 
@@ -53,7 +60,9 @@ describe('Users DAO', () => {
 
     // then
     result$.subscribe(result => {
-      if (!result) { return fail('User should be found'); }
+      if (!result) {
+        return fail('User should be found');
+      }
 
       expect(result._id).toEqual(user._id);
       expect(result.firstName).toEqual(user.firstName);
@@ -65,7 +74,7 @@ describe('Users DAO', () => {
     });
   });
 
-  test('#findAll finds all users', async (done) => {
+  test('#findAll finds all users', async done => {
     // given
     const users = [await mockUser(), await mockUser()];
 
@@ -87,7 +96,7 @@ describe('Users DAO', () => {
     });
   });
 
-  test('#findAllPublic finds all users in public scope', async (done) => {
+  test('#findAllPublic finds all users in public scope', async done => {
     // given
     const users = [await mockUser(), await mockUser()];
 

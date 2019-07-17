@@ -32,7 +32,7 @@ describe('Login effect', () => {
           data: [
             {
               path: '',
-              expected: '{ login: string, password: string }'
+              expected: '{ email: string, password: string }'
             }
           ],
           context: 'body'
@@ -62,7 +62,7 @@ describe('Login effect', () => {
 
     return request(app)
       .post('/api/v1/auth/login')
-      .send({ login: 'test', password: 'test' })
+      .send({ email: 'test', password: 'test' })
       .expect(401, {
         error: {
           status: 401,
@@ -79,7 +79,7 @@ describe('Login effect', () => {
 
     return request(app)
       .post('/api/v1/auth/login')
-      .send({ login: 'admin', password: 'admin' })
+      .send({ email: 'admin', password: 'admin' })
       .expect(200, { token: expectedToken });
   });
 });

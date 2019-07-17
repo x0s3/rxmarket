@@ -9,7 +9,7 @@ export namespace UsersDao {
     from(
       model
         .findOne({
-          email: credentials.login,
+          email: credentials.email,
           password: credentials.password
         })
         .select(USER_SECURE_FIELDS)
