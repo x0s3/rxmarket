@@ -1,7 +1,10 @@
+import { dark as darkTheme, mapping } from '@eva-design/eva';
 import React, { useCallback } from 'react';
 import { View } from 'react-native';
 import {
+  ApplicationProvider,
   Button,
+  Layout,
   Text,
   ThemedComponentProps,
   ThemeType,
@@ -23,39 +26,43 @@ const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
   const onSignIn = useCallback(() => dispatch(''), [dispatch]);
 
   return (
-    <ScrollableAvoidKeyboard style={themedStyle.container}>
-      <View style={themedStyle.headerContainer}>
-        <Text style={themedStyle.helloLabel} category={'h1'}>
-          RxMarket
-        </Text>
-        <Text style={themedStyle.signInLabel} category={'s1'}>
-          Sign in to your account
-        </Text>
-      </View>
-      <AuthForm
-        style={themedStyle.formContainer}
-        onForgotPasswordPress={() => alert('WIP')}
-        onDataChange={() => alert('')}
-      />
-      <Button
-        style={themedStyle.signInButton}
-        textStyle={textStyle.button}
-        size={'giant'}
-        disabled={true}
-        onPress={onSignIn}
-      >
-        SIGN IN
-      </Button>
-      <Button
-        style={themedStyle.signUpButton}
-        textStyle={themedStyle.signUpText}
-        appearance={'ghost'}
-        activeOpacity={0.75}
-        onPress={() => alert('WIP')}
-      >
-        Don't have an account? Create
-      </Button>
-    </ScrollableAvoidKeyboard>
+    <ApplicationProvider mapping={mapping} theme={darkTheme}>
+      <Layout style={{ flex: 1 }}>
+        <ScrollableAvoidKeyboard style={themedStyle.container}>
+          <View style={themedStyle.headerContainer}>
+            <Text style={themedStyle.helloLabel} category={'h1'}>
+              RxMarket
+            </Text>
+            <Text style={themedStyle.signInLabel} category={'s1'}>
+              Sign in to your account
+            </Text>
+          </View>
+          <AuthForm
+            style={themedStyle.formContainer}
+            onForgotPasswordPress={() => alert('WIP')}
+            onDataChange={() => alert('')}
+          />
+          <Button
+            style={themedStyle.signInButton}
+            textStyle={textStyle.button}
+            size={'giant'}
+            disabled={true}
+            onPress={onSignIn}
+          >
+            SIGN IN
+          </Button>
+          <Button
+            style={themedStyle.signUpButton}
+            textStyle={themedStyle.signUpText}
+            appearance={'ghost'}
+            activeOpacity={0.75}
+            onPress={() => alert('WIP')}
+          >
+            Don't have an account? Create
+          </Button>
+        </ScrollableAvoidKeyboard>
+      </Layout>
+    </ApplicationProvider>
   );
 });
 

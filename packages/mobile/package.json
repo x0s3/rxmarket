@@ -18,7 +18,7 @@
     "react": "^16.8.6",
     "react-native": "^0.60.3",
     "react-native-keyboard-aware-scroll-view": "^0.8.0",
-    "react-native-navigation": "3.0.0-alpha.2",
+    "react-native-navigation": "3.0.0-alpha.3",
     "react-native-ui-kitten": "^4.1.0",
     "react-native-vector-icons": "^6.6.0",
     "react-redux": "^7.1.0",
