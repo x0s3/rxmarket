@@ -10,7 +10,7 @@ const USER_MOCK = {
 };
 
 describe('Login effect', () => {
-  let jwtMiddleware: any;
+  let jwtMiddleware;
   const app = httpListener.run(createContext());
 
   beforeEach(() => {
@@ -32,7 +32,7 @@ describe('Login effect', () => {
           data: [
             {
               path: '',
-              expected: '{ email: string, password: string }'
+              expected: '{ login: string, password: string }'
             }
           ],
           context: 'body'
@@ -42,7 +42,7 @@ describe('Login effect', () => {
   test('POST /api/v1/auth/login returns 400 status if "password" is not provided', async () =>
     request(app)
       .post('/api/v1/auth/login')
-      .send({ email: 'test' })
+      .send({ login: 'test' })
       .expect(400, {
         error: {
           status: 400,
@@ -62,7 +62,7 @@ describe('Login effect', () => {
 
     return request(app)
       .post('/api/v1/auth/login')
-      .send({ email: 'test', password: 'test' })
+      .send({ login: 'test', password: 'test' })
       .expect(401, {
         error: {
           status: 401,
@@ -79,7 +79,7 @@ describe('Login effect', () => {
 
     return request(app)
       .post('/api/v1/auth/login')
-      .send({ email: 'admin', password: 'admin' })
+      .send({ login: 'admin', password: 'admin' })
       .expect(200, { token: expectedToken });
   });
 });

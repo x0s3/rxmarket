@@ -5,12 +5,12 @@ import { of, throwError } from 'rxjs';
 import { catchError, map, mergeMap, pluck } from 'rxjs/operators';
 import { Config } from '../../../config';
 import { neverNullable } from '../../../util';
-import { UsersDao } from '../../users';
+import { UsersDao } from '../../users/model';
 import { generateTokenPayload } from '../helpers';
 
 const validator$ = requestValidator$({
   body: t.type({
-    email: t.string,
+    login: t.string,
     password: t.string
   })
 });

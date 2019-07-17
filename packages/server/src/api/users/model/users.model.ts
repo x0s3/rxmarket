@@ -2,7 +2,7 @@ import { arrayProp, prop, Typegoose } from 'typegoose';
 
 export enum UserRole {
   USER = 'ROLE_USER',
-  ADMIN = 'ROLE_ADMIN'
+  ADMIN = 'ROLE_ADMIN',
 }
 
 export class User extends Typegoose {
@@ -23,11 +23,11 @@ export class User extends Typegoose {
 }
 
 export const USER_SECURE_FIELDS = {
-  password: 0
+  password: 0,
 };
 
 export const USER_PUBLIC_FIELDS = {
   ...USER_SECURE_FIELDS,
   email: 0,
-  roles: 0
+  roles: 0,
 };

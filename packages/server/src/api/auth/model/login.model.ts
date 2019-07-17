@@ -1,1 +1,4 @@
-export { LoginCredentials } from 'core/src/interfaces';
+export interface LoginCredentials {
+  login: string;
+  password: string;
+}

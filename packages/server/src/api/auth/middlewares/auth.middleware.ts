@@ -2,7 +2,7 @@ import { authorize$ as jwt$, VerifyOptions } from '@marblejs/middleware-jwt';
 import { flatMap } from 'rxjs/operators';
 import { Config } from '../../../config';
 import { neverNullable } from '../../../util';
-import { UsersDao } from '../../users';
+import { UsersDao } from '../../users/model';
 import { Payload } from '../helpers';
 
 const jwtConfig: VerifyOptions = { secret: Config.jwt.secret };
