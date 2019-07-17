@@ -35,13 +35,13 @@ const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
       <AuthForm
         style={themedStyle.formContainer}
         onForgotPasswordPress={() => alert('WIP')}
-        onDataChange={onFormDataChange}
+        onDataChange={() => alert('')}
       />
       <Button
         style={themedStyle.signInButton}
         textStyle={textStyle.button}
         size={'giant'}
-        disabled={!formData}
+        disabled={true}
         onPress={onSignIn}
       >
         SIGN IN
@@ -59,41 +59,39 @@ const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
   );
 });
 
-export const AuthScreen = withStyles(AuthView, (theme: ThemeType) => {
-  return {
-    container: {
-      flex: 1,
-      backgroundColor: theme['background-basic-color-1']
-    },
-    headerContainer: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: 216,
-      backgroundColor: theme['color-primary-default']
-    },
-    formContainer: {
-      flex: 1,
-      marginTop: 32,
-      paddingHorizontal: 16
-    },
-    helloLabel: {
-      color: 'white',
-      ...textStyle.headline
-    },
-    signInLabel: {
-      marginTop: 16,
-      color: 'white',
-      ...textStyle.subtitle
-    },
-    signInButton: {
-      marginHorizontal: 16
-    },
-    signUpButton: {
-      marginVertical: 12
-    },
-    signUpText: {
-      color: theme['text-hint-color'],
-      ...textStyle.subtitle
-    }
-  };
-});
+export const AuthScreen = withStyles(AuthView, (theme: ThemeType) => ({
+  container: {
+    flex: 1,
+    backgroundColor: theme['background-basic-color-1']
+  },
+  headerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: 216,
+    backgroundColor: theme['color-primary-default']
+  },
+  formContainer: {
+    flex: 1,
+    marginTop: 32,
+    paddingHorizontal: 16
+  },
+  helloLabel: {
+    color: 'white',
+    ...textStyle.headline
+  },
+  signInLabel: {
+    marginTop: 16,
+    color: 'white',
+    ...textStyle.subtitle
+  },
+  signInButton: {
+    marginHorizontal: 16
+  },
+  signUpButton: {
+    marginVertical: 12
+  },
+  signUpText: {
+    color: theme['text-hint-color'],
+    ...textStyle.subtitle
+  }
+}));

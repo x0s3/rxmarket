@@ -26,18 +26,18 @@ const AuthFormComponent = React.memo<SignInForm2Props>(
           <ValidationInput
             textStyle={textStyle.paragraph}
             placeholder='User Name'
-            //icon={PersonIconFill}
+            // icon={PersonIconFill}
             validator={NameValidator}
-            onChangeText={onUsernameInputTextChange}
+            onChangeText={() => alert('')}
           />
           <ValidationInput
             style={themedStyle.passwordInput}
             textStyle={textStyle.paragraph}
             placeholder='Password'
-            //icon={EyeOffIconFill}
+            // icon={EyeOffIconFill}
             secureTextEntry={true}
             validator={PasswordValidator}
-            onChangeText={onPasswordInputTextChange}
+            onChangeText={() => alert('')}
           />
           <View style={themedStyle.forgotPasswordContainer}>
             <Button
@@ -45,7 +45,7 @@ const AuthFormComponent = React.memo<SignInForm2Props>(
               textStyle={themedStyle.forgotPasswordText}
               appearance='ghost'
               activeOpacity={0.75}
-              onPress={onForgotPasswordButtonPress}
+              onPress={() => alert('')}
             >
               Forgot your password?
             </Button>

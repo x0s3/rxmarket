@@ -1,7 +1,7 @@
 import { applyMiddleware, compose, createStore, Store } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import { ajax } from 'rxjs/ajax';
-import { rootEpic } from './epics/index';
+import { rootEpic } from './epics';
 import { rootReducer } from './reducers';
 
 export function configureStore(): Store {

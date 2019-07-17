@@ -1,20 +1,34 @@
 import { createReducer, RootAction } from 'typesafe-actions';
-import { signIn } from '../actions/';
+import { signIn } from '../actions/auth.actions';
 
 export interface IAuthInitialState {
   readonly isSigning: boolean;
-  readonly token: string;
+  readonly token?: string;
+  readonly error: boolean;
 }
 
 export const authReducer = createReducer<IAuthInitialState, RootAction>({
   token: '',
-  isSigning: false
+  isSigning: false,
+  error: false
 })
-  .handleAction(signIn.request, (state, action) => ({
+  .handleAction(signIn.request, (state, _) => ({
     ...state,
-    isSigning: true
+    isSigning: true,
+    error: false
   }))
-  .handleAction(signIn.failure, (state, action) => ({
+  .handleAction(signIn.success, (state, action) => ({
     ...state,
-    isSigning: false
+    isSigning: false,
+    token: action.payload.token
+  }))
+  .handleAction(signIn.failure, (state, _) => ({
+    ...state,
+    isSigning: false,
+    error: true
+  }))
+  .handleAction(signIn.cancel, (state, _) => ({
+    ...state,
+    isSigning: false,
+    error: false
   }));

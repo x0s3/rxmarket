@@ -1,8 +1,9 @@
+import { IUser } from 'core/src/interfaces';
 import { Epic } from 'redux-observable';
 import { from, of, pipe } from 'rxjs';
 import { catchError, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
-import { signIn } from '../actions/';
+import { signIn } from '../actions/auth.actions';
 
 const signInEpic: Epic = (action$, store$, { post, baseURL }) =>
   action$.pipe(
@@ -14,7 +15,7 @@ const signInEpic: Epic = (action$, store$, { post, baseURL }) =>
           password: action.payload.password
         })
       ).pipe(
-        map(user => signIn.success()),
+        map((user: IUser | any) => signIn.success(user)),
         catchError(
           pipe(
             signIn.failure,
@@ -25,3 +26,5 @@ const signInEpic: Epic = (action$, store$, { post, baseURL }) =>
       )
     )
   );
+
+export default { signInEpic } as const;
