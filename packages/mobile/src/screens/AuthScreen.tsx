@@ -18,6 +18,7 @@ interface ComponentProps {
   onSignInPress: (formData: { email: string; password: string }) => void;
   onSignUpPress: () => void;
   onForgotPasswordPress: () => void;
+  componentId: string;
 }
 
 export type AuthViewProps = ThemedComponentProps & ComponentProps;
@@ -45,7 +46,7 @@ const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
           <AuthForm
             style={themedStyle.formContainer}
             onForgotPasswordPress={() => alert('WIP')}
-            onDataChange={() => alert('')}
+            onDataChange={() => alert('WIP')}
           />
           <Button
             style={themedStyle.signInButton}

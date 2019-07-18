@@ -8,6 +8,8 @@
   },
   "homepage": "https://github.com/x0s3/rxmarket",
   "scripts": {
+    "build": "yarn clear && tsc",
+    "clear": "rimraf dist",
     "start": "react-native start",
     "test": "jest",
     "lint": "tslint -p ."
@@ -42,7 +44,8 @@
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
-    "react-test-renderer": "16.8.6"
+    "react-test-renderer": "16.8.6",
+    "rimraf": "^2.6.3"
   },
   "jest": {
     "preset": "react-native"

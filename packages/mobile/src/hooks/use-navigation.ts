@@ -132,11 +132,11 @@ function useNavigationModal({
   }
 }
 
-export default {
+export {
   useNavigationComponentDidAppear,
   useNavigationComponentDidDisappear,
   useNavigationCommand,
   useNavigationButtonPress,
   useNavigationScreen,
   useNavigationModal
-} as const;
+};

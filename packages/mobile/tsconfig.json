@@ -1,6 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": "./src",
+    "rootDir": "src",
+    "outDir": "dist",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "jsx": "preserve",
@@ -8,8 +11,6 @@
     "allowJs": false,
     "declaration": true,
     "composite": true,
-    "rootDir": "src",
-    "outDir": "dist",
     "typeRoots": ["../../node_modules/@types"]
   },
   "exclude": ["node_modules"],
