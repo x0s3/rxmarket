@@ -14,30 +14,34 @@ interface ComponentProps {
   onDataChange: (value: any | undefined) => void;
 }
 
-export type SignInForm2Props = ThemedComponentProps &
-  ViewProps &
-  ComponentProps;
+export type SignInFormProps = ThemedComponentProps & ViewProps & ComponentProps;
 
-const AuthFormComponent = React.memo<SignInForm2Props>(
+const AuthFormComponent = React.memo<SignInFormProps>(
   ({ themedStyle, style, ...props }) => {
     return (
       <View style={[themedStyle.container, style]} {...props}>
         <View style={themedStyle.formContainer}>
           <ValidationInput
             textStyle={textStyle.paragraph}
-            placeholder='User Name'
+            placeholder={'User Email'}
             // icon={PersonIconFill}
             validator={NameValidator}
-            onChangeText={() => alert('')}
+            textContentType={'emailAddress'}
+            onChangeText={(email: string) =>
+              props.onDataChange((d: any) => ({ ...d, email }))
+            }
           />
           <ValidationInput
             style={themedStyle.passwordInput}
             textStyle={textStyle.paragraph}
-            placeholder='Password'
+            placeholder={'Password'}
             // icon={EyeOffIconFill}
             secureTextEntry={true}
+            textContentType={'password'}
             validator={PasswordValidator}
-            onChangeText={() => alert('')}
+            onChangeText={(password: string) =>
+              props.onDataChange((d: any) => ({ ...d, password }))
+            }
           />
           <View style={themedStyle.forgotPasswordContainer}>
             <Button

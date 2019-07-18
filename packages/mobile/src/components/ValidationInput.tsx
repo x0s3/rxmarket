@@ -10,6 +10,7 @@ import {
 interface FCProps extends InputProps {
   validator: (value: string) => boolean;
   formatter?: (value: string, stateValue: string) => string;
+  onChangeText: any;
 }
 
 export type ValidationInputProps = ThemedComponentProps & FCProps;
@@ -17,7 +18,10 @@ export type ValidationInputProps = ThemedComponentProps & FCProps;
 const ValidationInputComponent = React.memo<ValidationInputProps>(
   ({ style, themedStyle, ...props }) => {
     const [value, setValue] = useState<string>('');
-    const onChangeText = (v: string) => setValue(v);
+    const onChangeText = (v: string) => {
+      setValue(v);
+      props.onChangeText(v);
+    };
 
     const isValid = (val: string): boolean => props.validator(val);
 
@@ -31,7 +35,8 @@ const ValidationInputComponent = React.memo<ValidationInputProps>(
 
     return (
       <Input
-        autoCapitalize='none'
+        autoCorrect={false}
+        autoCapitalize={'none'}
         status={getStatus()}
         {...props}
         value={value}

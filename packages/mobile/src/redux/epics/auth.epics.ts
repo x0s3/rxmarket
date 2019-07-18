@@ -10,12 +10,18 @@ const signInEpic: Epic = (action$, store$, { post, baseURL }) =>
     filter(isActionOf(signIn.request)),
     switchMap(action =>
       from(
-        post(`${baseURL}/auth/login`, {
-          email: action.payload.email,
-          password: action.payload.password
-        })
+        post(
+          `${baseURL}/auth/login`,
+          {
+            email: action.payload.email,
+            password: action.payload.password
+          },
+          {
+            'Content-Type': 'application/json'
+          }
+        )
       ).pipe(
-        map((user: IUser | any) => signIn.success(user)),
+        map(({ response }: IUser | any) => signIn.success(response)),
         catchError(
           pipe(
             signIn.failure,

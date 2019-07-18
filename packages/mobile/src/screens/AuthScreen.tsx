@@ -1,5 +1,6 @@
 import { dark as darkTheme, mapping } from '@eva-design/eva';
-import React, { useCallback } from 'react';
+import { LoginCredentials } from 'core/src/interfaces';
+import React, { useCallback, useState } from 'react';
 import { View } from 'react-native';
 import {
   ApplicationProvider,
@@ -24,12 +25,15 @@ interface ComponentProps {
 export type AuthViewProps = ThemedComponentProps & ComponentProps;
 
 const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
+  const [dataLogin, setDataLogin] = useState<LoginCredentials>({
+    email: '',
+    password: ''
+  });
   const dispatch = useReduxAction();
-  const onSignIn = useCallback(
-    () =>
-      dispatch(signIn.request({ email: 'xose@xose.com', password: 'xose' })),
-    [dispatch]
-  );
+  const onSignIn = useCallback(() => dispatch(signIn.request(dataLogin)), [
+    dispatch,
+    dataLogin
+  ]);
 
   return (
     <ApplicationProvider mapping={mapping} theme={darkTheme}>
@@ -46,7 +50,7 @@ const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
           <AuthForm
             style={themedStyle.formContainer}
             onForgotPasswordPress={() => alert('WIP')}
-            onDataChange={() => alert('WIP')}
+            onDataChange={setDataLogin}
           />
           <Button
             style={themedStyle.signInButton}

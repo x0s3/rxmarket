@@ -81,6 +81,9 @@ After having the commit well commented for deploying the changes to the repo jus
 - [ ] Add FastLane for mobile release apps
 - [ ] Rider App
 - [ ] Manager App / WebApp
+- [ ] CodePush
+- [ ] FCM
+- [ ] Add some serverless endpoint
 - [ ] ¿¿Add some native-module with Go or Kotlin-Native?? 🙀
 
 # License
