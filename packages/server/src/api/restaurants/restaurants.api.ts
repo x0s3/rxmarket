@@ -10,5 +10,5 @@ export const getRestaurant$ = EffectFactory.matchPath('/:id')
   .use(getRestaurantEffect$);
 
 export const restaurants$ = combineRoutes('/restaurants', {
-  effects: [getRestaurantList$, getRestaurant$],
+  effects: [getRestaurantList$, getRestaurant$]
 });

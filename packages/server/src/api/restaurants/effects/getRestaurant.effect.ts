@@ -1,12 +1,12 @@
 import { HttpEffect, HttpError, HttpStatus } from '@marblejs/core';
 import { throwError } from 'rxjs';
-import { catchError, map, mergeMap, pluck } from 'rxjs/operators';
+import { catchError, map, mergeMap } from 'rxjs/operators';
 import { neverNullable } from '../../../util';
 import { RestaurantDao } from '../model';
 
 export const getRestaurantEffect$: HttpEffect = req$ =>
   req$.pipe(
-    pluck('restaurant', '_id'),
+    map((req: any) => req.params.id),
     mergeMap(RestaurantDao.findById),
     mergeMap(neverNullable),
     map(restaurant => ({ body: restaurant })),
