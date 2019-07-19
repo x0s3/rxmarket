@@ -1,6 +1,7 @@
 import { combineRoutes, EffectFactory } from '@marblejs/core';
 import { auth$ } from './auth';
 import { notFoundEffect$, versionEffect$ } from './common/effects';
+import { restaurants$ } from './restaurants';
 import { users$ } from './users';
 
 const root$ = EffectFactory.matchPath('/')
@@ -11,4 +12,10 @@ const notFound$ = EffectFactory.matchPath('*')
   .matchType('*')
   .use(notFoundEffect$);
 
-export const api$ = combineRoutes('/api/v1', [root$, auth$, users$, notFound$]);
+export const api$ = combineRoutes('/api/v1', [
+  root$,
+  auth$,
+  users$,
+  restaurants$,
+  notFound$
+]);

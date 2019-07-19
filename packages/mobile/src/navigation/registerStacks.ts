@@ -33,7 +33,7 @@ export function homeStack(): void {
     }
   };
   loadIcons([
-    { name: 'md-basket' },
+    { name: 'md-home' },
     { name: 'md-search' },
     { name: 'md-list-box' },
     { name: 'md-person' }
