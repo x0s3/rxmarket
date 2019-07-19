@@ -1,5 +1,4 @@
 import { combineRoutes, EffectFactory } from '@marblejs/core';
-import { authorize$ } from '../auth';
 import { getRestaurantEffect$, getRestaurantListEffect$ } from './effects';
 
 export const getRestaurantList$ = EffectFactory.matchPath('/')
@@ -12,5 +11,4 @@ export const getRestaurant$ = EffectFactory.matchPath('/:id')
 
 export const restaurants$ = combineRoutes('/restaurants', {
   effects: [getRestaurantList$, getRestaurant$],
-  middlewares: [authorize$]
 });

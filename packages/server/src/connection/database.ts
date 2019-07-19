@@ -17,12 +17,15 @@ export namespace Database {
 
   export const connect = () =>
     mongoose
-      .connect(urlMain, { useNewUrlParser: true })
+      .connect(urlMain, { useCreateIndex: true, useNewUrlParser: true })
       .then(onOpen)
       .catch(onError);
 
   export const connectTest = () =>
-    mongoose.connect(urlTest + '/' + uuid.v4(), { useNewUrlParser: true });
+    mongoose.connect(urlTest + '/' + uuid.v4(), {
+      useCreateIndex: true,
+      useNewUrlParser: true
+    });
 
   export const disconnect = () => mongoose.disconnect();
 

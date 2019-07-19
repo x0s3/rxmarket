@@ -15,7 +15,7 @@ export enum RestaurantCategory {
 }
 
 export class Restaurant extends Typegoose {
-  @prop({ required: true })
+  @prop({ required: true, index: true })
   name?: string;
 
   @prop({ required: true })
@@ -23,6 +23,12 @@ export class Restaurant extends Typegoose {
 
   @prop({ required: true })
   email?: string;
+
+  @prop({ default: 0 })
+  rate?: number;
+
+  @prop()
+  description?: string;
 
   @arrayProp({ items: String, enum: RestaurantRole })
   roles?: RestaurantRole[];

@@ -20,6 +20,7 @@ export namespace UsersDao {
     from(
       model
         .findById(id)
+        .populate('restaurants')
         .select(USER_SECURE_FIELDS)
         .exec()
     );

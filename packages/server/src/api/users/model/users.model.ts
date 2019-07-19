@@ -1,4 +1,5 @@
-import { arrayProp, prop, Typegoose } from 'typegoose';
+import { arrayProp, prop, Ref, Typegoose } from 'typegoose';
+import { Restaurant } from '../../restaurants';
 
 export enum UserRole {
   USER = 'ROLE_USER',
@@ -18,8 +19,14 @@ export class User extends Typegoose {
   @prop({ required: true })
   password?: string;
 
+  @prop({ required: true })
+  phone?: string;
+
   @arrayProp({ items: String, enum: UserRole })
   roles?: UserRole[];
+
+  @arrayProp({ itemsRef: Restaurant })
+  restaurants?: Array<Ref<Restaurant>>;
 }
 
 export const USER_SECURE_FIELDS = {
