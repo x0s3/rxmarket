@@ -1,5 +1,7 @@
 import * as authActions from './auth.actions';
+import * as restaurantActions from './restaurants.actions';
 
 export default {
-  authActions
+  authActions,
+  restaurantActions
 } as const;

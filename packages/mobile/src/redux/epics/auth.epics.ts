@@ -13,7 +13,7 @@ import { isActionOf } from 'typesafe-actions';
 import { homeStack } from '../../navigation';
 import { signIn } from '../actions/auth.actions';
 
-const signInEpic: Epic = (action$, store$, { post, baseURL }) =>
+const signInEpic$: Epic = (action$, store$, { post, baseURL }) =>
   action$.pipe(
     filter(isActionOf(signIn.request)),
     switchMap(action =>
@@ -42,4 +42,4 @@ const signInEpic: Epic = (action$, store$, { post, baseURL }) =>
     )
   );
 
-export default { signInEpic } as const;
+export default { signInEpic$ } as const;
