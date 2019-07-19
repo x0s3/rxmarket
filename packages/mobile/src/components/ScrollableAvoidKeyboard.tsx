@@ -1,4 +1,5 @@
 import React from 'react';
+import { SafeAreaView } from 'react-native';
 import {
   KeyboardAwareScrollView,
   KeyboardAwareScrollViewProps
@@ -16,19 +17,21 @@ const ScrollableAvoidKeyboardComponent = React.memo<
   ScrollableAvoidKeyboardProps
 >(({ themedStyle, style, contentContainerStyle, ...props }) => {
   return (
-    <KeyboardAwareScrollView
-      bounces={false}
-      bouncesZoom={false}
-      alwaysBounceVertical={false}
-      alwaysBounceHorizontal={false}
-      style={[themedStyle.container, style]}
-      contentContainerStyle={[
-        themedStyle.contentContainer,
-        contentContainerStyle
-      ]}
-      enableOnAndroid={true}
-      {...props}
-    />
+    <SafeAreaView style={{ flex: 1 }}>
+      <KeyboardAwareScrollView
+        bounces={false}
+        bouncesZoom={false}
+        alwaysBounceVertical={false}
+        alwaysBounceHorizontal={false}
+        style={[themedStyle.container, style]}
+        contentContainerStyle={[
+          themedStyle.contentContainer,
+          contentContainerStyle
+        ]}
+        enableOnAndroid={true}
+        {...props}
+      />
+    </SafeAreaView>
   );
 });
 

@@ -7,12 +7,15 @@ import {
   ThemeType,
   withStyles
 } from 'react-native-ui-kitten';
+import { ScrollableAvoidKeyboard } from '../../components';
 
 const ProfileView = React.memo<any>(({ themedStyle, ...props }) => {
   return (
     <ApplicationProvider mapping={mapping} theme={darkTheme}>
       <Layout style={{ flex: 1 }}>
-        <Text>Profile User</Text>
+        <ScrollableAvoidKeyboard style={themedStyle.container}>
+          <Text>Profile User</Text>
+        </ScrollableAvoidKeyboard>
       </Layout>
     </ApplicationProvider>
   );

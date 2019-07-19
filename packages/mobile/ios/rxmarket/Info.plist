@@ -55,6 +55,7 @@
 	<false/>
   <key>UIAppFonts</key>
   <array>
+    <string>Ionicons.ttf</string>
     <string>opensans-bold-italic.ttf</string>
     <string>opensans-bold.ttf</string>
     <string>opensans-extra-bold-italic.ttf</string>

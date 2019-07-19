@@ -1,8 +1,16 @@
 import { IUser } from 'core/src/interfaces';
 import { Epic } from 'redux-observable';
 import { from, of, pipe } from 'rxjs';
-import { catchError, filter, map, switchMap, takeUntil } from 'rxjs/operators';
+import {
+  catchError,
+  filter,
+  map,
+  switchMap,
+  takeUntil,
+  tap
+} from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
+import { homeStack } from '../../navigation';
 import { signIn } from '../actions/auth.actions';
 
 const signInEpic: Epic = (action$, store$, { post, baseURL }) =>
@@ -22,6 +30,7 @@ const signInEpic: Epic = (action$, store$, { post, baseURL }) =>
         )
       ).pipe(
         map(({ response }: IUser | any) => signIn.success(response)),
+        tap(homeStack),
         catchError(
           pipe(
             signIn.failure,
