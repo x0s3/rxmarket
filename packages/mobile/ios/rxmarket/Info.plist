@@ -53,5 +53,18 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <key>UIAppFonts</key>
+  <array>
+    <string>opensans-bold-italic.ttf</string>
+    <string>opensans-bold.ttf</string>
+    <string>opensans-extra-bold-italic.ttf</string>
+    <string>opensans-extra-bold.ttf</string>
+    <string>opensans-italic.ttf</string>
+    <string>opensans-light.ttf</string>
+    <string>opensans-light-italic.ttf</string>
+    <string>opensans-regular.ttf</string>
+    <string>opensans-semibold-bold-italic.ttf</string>
+    <string>opensans-semibold.ttf</string>
+  </array>
 </dict>
 </plist>

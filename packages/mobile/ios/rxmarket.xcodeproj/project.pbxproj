@@ -18,6 +18,16 @@
 		2DCD954D1E0B4F2C00145EB5 /* rxmarketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* rxmarketTests.m */; };
 		3125DB97F7717247579859B7 /* libPods-rxmarketTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C901015229ED095AC4E842C8 /* libPods-rxmarketTests.a */; };
 		5C336164A3A734E33C2BF1B7 /* libPods-rxmarket-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCF79493ED22068A011A49D /* libPods-rxmarket-tvOSTests.a */; };
+		8D65F9C522E1C283004CE4F4 /* opensans-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9BB22E1C282004CE4F4 /* opensans-light.ttf */; };
+		8D65F9C622E1C283004CE4F4 /* opensans-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9BC22E1C282004CE4F4 /* opensans-bold.ttf */; };
+		8D65F9C722E1C283004CE4F4 /* opensans-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9BD22E1C282004CE4F4 /* opensans-semibold.ttf */; };
+		8D65F9C822E1C283004CE4F4 /* opensans-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9BE22E1C282004CE4F4 /* opensans-regular.ttf */; };
+		8D65F9C922E1C283004CE4F4 /* opensans-extra-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9BF22E1C282004CE4F4 /* opensans-extra-bold.ttf */; };
+		8D65F9CA22E1C283004CE4F4 /* opensans-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9C022E1C283004CE4F4 /* opensans-italic.ttf */; };
+		8D65F9CB22E1C283004CE4F4 /* opensans-extra-bold-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9C122E1C283004CE4F4 /* opensans-extra-bold-italic.ttf */; };
+		8D65F9CC22E1C283004CE4F4 /* opensans-bold-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9C222E1C283004CE4F4 /* opensans-bold-italic.ttf */; };
+		8D65F9CD22E1C283004CE4F4 /* opensans-semibold-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9C322E1C283004CE4F4 /* opensans-semibold-italic.ttf */; };
+		8D65F9CE22E1C283004CE4F4 /* opensans-lignt-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D65F9C422E1C283004CE4F4 /* opensans-lignt-italic.ttf */; };
 		B3BD3AC7C2B5BE8FD8C631C4 /* libPods-rxmarket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E5B38BD28D31D17067CDE4 /* libPods-rxmarket-tvOS.a */; };
 		F13DF7F2516740CB6A694EA5 /* libPods-rxmarket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F016E84C9AE4813F430CEEE6 /* libPods-rxmarket.a */; };
 /* End PBXBuildFile section */
@@ -57,6 +67,16 @@
 		2D9A44BAF658C3B7E6D2DDD0 /* Pods-rxmarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxmarket.release.xcconfig"; path = "Target Support Files/Pods-rxmarket/Pods-rxmarket.release.xcconfig"; sourceTree = "<group>"; };
 		44E5B38BD28D31D17067CDE4 /* libPods-rxmarket-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rxmarket-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		870B0A0A12306F7F01C3B38F /* Pods-rxmarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxmarketTests.release.xcconfig"; path = "Target Support Files/Pods-rxmarketTests/Pods-rxmarketTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D65F9BB22E1C282004CE4F4 /* opensans-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-light.ttf"; sourceTree = "<group>"; };
+		8D65F9BC22E1C282004CE4F4 /* opensans-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-bold.ttf"; sourceTree = "<group>"; };
+		8D65F9BD22E1C282004CE4F4 /* opensans-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-semibold.ttf"; sourceTree = "<group>"; };
+		8D65F9BE22E1C282004CE4F4 /* opensans-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-regular.ttf"; sourceTree = "<group>"; };
+		8D65F9BF22E1C282004CE4F4 /* opensans-extra-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-extra-bold.ttf"; sourceTree = "<group>"; };
+		8D65F9C022E1C283004CE4F4 /* opensans-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-italic.ttf"; sourceTree = "<group>"; };
+		8D65F9C122E1C283004CE4F4 /* opensans-extra-bold-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-extra-bold-italic.ttf"; sourceTree = "<group>"; };
+		8D65F9C222E1C283004CE4F4 /* opensans-bold-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-bold-italic.ttf"; sourceTree = "<group>"; };
+		8D65F9C322E1C283004CE4F4 /* opensans-semibold-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-semibold-italic.ttf"; sourceTree = "<group>"; };
+		8D65F9C422E1C283004CE4F4 /* opensans-lignt-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-lignt-italic.ttf"; sourceTree = "<group>"; };
 		A15FCD168693FEB3BB38019A /* Pods-rxmarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxmarketTests.debug.xcconfig"; path = "Target Support Files/Pods-rxmarketTests/Pods-rxmarketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBCF79493ED22068A011A49D /* libPods-rxmarket-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rxmarket-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E61AD541FECF1CDC84DCCE /* Pods-rxmarket-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxmarket-tvOS.release.xcconfig"; path = "Target Support Files/Pods-rxmarket-tvOS/Pods-rxmarket-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +179,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8D421F7D22E1C22700C73421 /* Resources */,
 				13B07FAE1A68108700A75B9A /* rxmarket */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* rxmarketTests */,
@@ -180,6 +201,23 @@
 				2D02E4901E0B4A5D006451C7 /* rxmarket-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8D421F7D22E1C22700C73421 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D65F9C222E1C283004CE4F4 /* opensans-bold-italic.ttf */,
+				8D65F9BC22E1C282004CE4F4 /* opensans-bold.ttf */,
+				8D65F9C122E1C283004CE4F4 /* opensans-extra-bold-italic.ttf */,
+				8D65F9BF22E1C282004CE4F4 /* opensans-extra-bold.ttf */,
+				8D65F9C022E1C283004CE4F4 /* opensans-italic.ttf */,
+				8D65F9BB22E1C282004CE4F4 /* opensans-light.ttf */,
+				8D65F9C422E1C283004CE4F4 /* opensans-lignt-italic.ttf */,
+				8D65F9BE22E1C282004CE4F4 /* opensans-regular.ttf */,
+				8D65F9C322E1C283004CE4F4 /* opensans-semibold-italic.ttf */,
+				8D65F9BD22E1C282004CE4F4 /* opensans-semibold.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E8DF1CCD0FB4FBB94CB96C23 /* Pods */ = {
@@ -284,7 +322,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -335,8 +373,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D65F9C522E1C283004CE4F4 /* opensans-light.ttf in Resources */,
+				8D65F9CA22E1C283004CE4F4 /* opensans-italic.ttf in Resources */,
+				8D65F9CE22E1C283004CE4F4 /* opensans-lignt-italic.ttf in Resources */,
+				8D65F9CC22E1C283004CE4F4 /* opensans-bold-italic.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8D65F9C622E1C283004CE4F4 /* opensans-bold.ttf in Resources */,
+				8D65F9C922E1C283004CE4F4 /* opensans-extra-bold.ttf in Resources */,
+				8D65F9C722E1C283004CE4F4 /* opensans-semibold.ttf in Resources */,
+				8D65F9C822E1C283004CE4F4 /* opensans-regular.ttf in Resources */,
+				8D65F9CB22E1C283004CE4F4 /* opensans-extra-bold-italic.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				8D65F9CD22E1C283004CE4F4 /* opensans-semibold-italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +634,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = rxmarketTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -606,6 +655,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = rxmarketTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -627,6 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = rxmarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -646,6 +697,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = rxmarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -672,6 +724,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "rxmarket-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -700,6 +753,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "rxmarket-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -727,6 +781,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "rxmarket-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -754,6 +809,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "rxmarket-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (

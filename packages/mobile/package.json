@@ -18,7 +18,7 @@
     "@eva-design/eva": "^1.0.1",
     "core": "0.0.0",
     "react": "^16.8.6",
-    "react-native": "^0.60.3",
+    "react-native": "^0.60.4",
     "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-native-navigation": "3.0.0-alpha.3",
     "react-native-ui-kitten": "^4.1.0",
