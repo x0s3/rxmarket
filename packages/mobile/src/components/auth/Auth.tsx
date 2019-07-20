@@ -7,7 +7,7 @@ import {
   ThemeType,
   withStyles
 } from 'react-native-ui-kitten';
-import { textStyle, ValidationInput } from '../';
+import { Ionicon, textStyle, ValidationInput } from '../';
 
 interface ComponentProps {
   onForgotPasswordPress: () => void;
@@ -24,7 +24,7 @@ const AuthFormComponent = React.memo<SignInFormProps>(
           <ValidationInput
             textStyle={textStyle.paragraph}
             placeholder={'User Email'}
-            // icon={PersonIconFill}
+            icon={() => <Ionicon name={'md-mail'} />}
             validator={NameValidator}
             textContentType={'emailAddress'}
             onChangeText={(email: string) =>
@@ -35,7 +35,7 @@ const AuthFormComponent = React.memo<SignInFormProps>(
             style={themedStyle.passwordInput}
             textStyle={textStyle.paragraph}
             placeholder={'Password'}
-            // icon={EyeOffIconFill}
+            icon={() => <Ionicon name={'md-lock'} />}
             secureTextEntry={true}
             textContentType={'password'}
             validator={PasswordValidator}
