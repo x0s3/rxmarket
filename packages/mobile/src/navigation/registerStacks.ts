@@ -118,6 +118,6 @@ export function homeStack(): void {
 }
 
 export function initialStack(): void {
-  if (false) authStack();
+  if (true) authStack();
   else homeStack();
 }

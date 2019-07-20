@@ -13,6 +13,7 @@ import {
 } from 'react-native-ui-kitten';
 import { useDispatch as useReduxAction } from 'react-redux';
 import { AuthForm, ScrollableAvoidKeyboard, textStyle } from '../components';
+import { homeStack } from '../navigation';
 import { signIn } from '../redux/actions/auth.actions';
 
 interface ComponentProps {
@@ -66,7 +67,7 @@ const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
             textStyle={themedStyle.signUpText}
             appearance={'ghost'}
             activeOpacity={0.75}
-            onPress={() => alert('WIP')}
+            onPress={homeStack}
           >
             Don't have an account? Create
           </Button>

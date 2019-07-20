@@ -1,18 +1,5 @@
+import { RestaurantCategory, RestaurantRole } from 'core/src/interfaces';
 import { arrayProp, prop, Typegoose } from 'typegoose';
-
-export enum RestaurantRole {
-  DELIVERY = 'DELIVERY_RESTAURANT',
-  LOCAL = 'LOCAL_RESTAURANT'
-}
-
-export enum RestaurantCategory {
-  HEALTHY = 'HEALTHY_RESTAURANT',
-  VEGAN = 'VEGAN_RESTAURANT',
-  ITALIAN = 'ITALIAN_RESTAURANT',
-  FAST_FOOD = 'FAST_FOOD_RESTAURANT',
-  INDIAN = 'INDIAN_RESTAURANT',
-  SPANISH = 'SPANISH_RESTAURANT '
-}
 
 export class Restaurant extends Typegoose {
   @prop({ required: true, index: true })
