@@ -129,6 +129,6 @@ export function initialStack(): void {
       orientation: ['portrait']
     }
   });
-  if (true) authStack();
+  if (false) authStack();
   else homeStack();
 }
