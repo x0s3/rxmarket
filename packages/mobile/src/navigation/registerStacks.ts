@@ -118,6 +118,17 @@ export function homeStack(): void {
 }
 
 export function initialStack(): void {
+  Navigation.setDefaultOptions({
+    popGesture: false,
+    statusBar: {
+      visible: true,
+      style: 'dark',
+      backgroundColor: '#293157'
+    },
+    layout: {
+      orientation: ['portrait']
+    }
+  });
   if (true) authStack();
   else homeStack();
 }

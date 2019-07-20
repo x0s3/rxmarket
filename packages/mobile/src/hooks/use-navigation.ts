@@ -6,7 +6,7 @@ export type ModalActions = 'show' | 'dimiss' | 'dismissAll';
 export type ScreenActions = 'push' | 'pop' | 'popTo' | 'popToRoot';
 
 function useNavigationComponentDidAppear(
-  handler: (T: any) => void,
+  callback: (event: any) => void,
   componentId: string
 ) {
   useEffect(() => {
@@ -15,7 +15,7 @@ function useNavigationComponentDidAppear(
         const equalComponentId = event.componentId === componentId;
 
         if (equalComponentId || !componentId) {
-          handler(event);
+          callback(event);
         }
       }
     );
@@ -25,7 +25,7 @@ function useNavigationComponentDidAppear(
 }
 
 function useNavigationComponentDidDisappear(
-  handler: (T: any) => void,
+  callback: (event: any) => void,
   componentId: string
 ) {
   useEffect(() => {
@@ -34,7 +34,7 @@ function useNavigationComponentDidDisappear(
         const equalComponentId = event.componentId === componentId;
 
         if (equalComponentId || !componentId) {
-          handler(event);
+          callback(event);
         }
       }
     );
@@ -44,7 +44,7 @@ function useNavigationComponentDidDisappear(
 }
 
 function useNavigationCommand(
-  handler: (name: string, params: any) => void,
+  callback: (name: string, params: any) => void,
   commandName: any
 ) {
   useEffect(() => {
@@ -53,7 +53,7 @@ function useNavigationCommand(
         const equalCommandName = name === commandName;
 
         if (equalCommandName || !commandName) {
-          handler(name, params);
+          callback(name, params);
         }
       }
     );
@@ -63,7 +63,7 @@ function useNavigationCommand(
 }
 
 function useNavigationButtonPress(
-  handler: (event: any) => void,
+  callback: (event: any) => void,
   componentId: string,
   buttonId: string
 ) {
@@ -74,13 +74,13 @@ function useNavigationButtonPress(
         const equalButtonId = event.buttonId === buttonId;
 
         if (equalComponentId && equalButtonId) {
-          handler(event);
+          callback(event);
         } else if (!buttonId && equalComponentId) {
-          handler(event);
+          callback(event);
         } else if (!componentId && equalButtonId) {
-          handler(event);
+          callback(event);
         } else if (!componentId && !buttonId) {
-          handler(event);
+          callback(event);
         }
       }
     );
