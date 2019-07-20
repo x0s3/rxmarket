@@ -9,9 +9,23 @@ import {
   withStyles
 } from 'react-native-ui-kitten';
 import { ScrollableAvoidKeyboard } from '../../components';
+import { useNavigationComponentDidAppear } from '../../hooks/use-navigation';
 
-const ProfileView = React.memo<ThemedComponentProps>(
+interface ComponentProps {
+  onSignInPress: (formData: { email: string; password: string }) => void;
+  onSignUpPress: () => void;
+  onForgotPasswordPress: () => void;
+  componentId: string;
+}
+
+export type ProfileViewProps = ThemedComponentProps & ComponentProps;
+
+const ProfileView = React.memo<ProfileViewProps>(
   ({ themedStyle, ...props }) => {
+    useNavigationComponentDidAppear(() => {
+      console.log('testing');
+    }, props.componentId);
+
     return (
       <ApplicationProvider mapping={mapping} theme={darkTheme}>
         <Layout style={{ flex: 1 }}>
