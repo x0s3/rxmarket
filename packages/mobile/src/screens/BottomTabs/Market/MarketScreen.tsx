@@ -1,5 +1,5 @@
 import { dark as darkTheme, mapping } from '@eva-design/eva';
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
   ApplicationProvider,
   Layout,
@@ -7,17 +7,27 @@ import {
   ThemeType,
   withStyles
 } from 'react-native-ui-kitten';
-import { useDispatch as useReduxAction } from 'react-redux';
-import { CustomList, ScrollableAvoidKeyboard } from '../../../components';
+import {
+  CustomList,
+  CustomRefresh,
+  ScrollableAvoidKeyboard
+} from '../../../components';
 import { ProductListItem } from '../../../components/Testing';
+import { useReduxAction, useReduxState } from '../../../hooks/use-redux';
 import actions from '../../../redux/actions';
+import {
+  getFetchingRestaurants,
+  getRestaurants
+} from '../../../redux/selectors';
 
 const MarketView = React.memo<ThemedComponentProps>(
   ({ themedStyle, ...props }) => {
-    const dispatch = useReduxAction();
-    const fetchRestaurants = useCallback(() => {
-      dispatch(actions.restaurantActions.getRestaurants.request());
-    }, [dispatch]);
+    const fetchRestaurants = useReduxAction(
+      actions.restaurantActions.getRestaurants.request
+    );
+
+    const restaurants = useReduxState(getRestaurants);
+    const isFetchRestaurants = useReduxState(getFetchingRestaurants);
 
     useEffect(() => {
       fetchRestaurants();
@@ -28,17 +38,16 @@ const MarketView = React.memo<ThemedComponentProps>(
         <Layout style={{ flex: 1 }}>
           <ScrollableAvoidKeyboard style={themedStyle.container}>
             <CustomList
+              refreshControl={
+                <CustomRefresh
+                  refreshing={isFetchRestaurants}
+                  onRefresh={fetchRestaurants}
+                />
+              }
               numColumns={2}
               columnWrapperStyle={themedStyle.columnWrapper}
               renderItem={({ item }) => <ProductListItem {...item} />}
-              data={[
-                { id: 'hola', name: 'McDonalds', type: 'Meal', price: 200 },
-                { id: 'hola2', name: 'Burger King', type: 'Meal', price: 200 },
-                { id: 'hola3', name: 'KFC', type: 'Meal', price: 200 },
-                { id: 'hola4', name: 'TelePizza', type: 'Meal', price: 200 },
-                { id: 'hola5', name: 'Dominos', type: 'Meal', price: 200 },
-                { id: 'hola6', name: 'PizzaHut', type: 'Meal', price: 200 }
-              ]}
+              data={restaurants}
               keyExtractor={i => i.id}
             />
           </ScrollableAvoidKeyboard>
