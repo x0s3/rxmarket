@@ -8,9 +8,9 @@ import {
   withStyles
 } from 'react-native-ui-kitten';
 import { useDispatch as useReduxAction } from 'react-redux';
-import { CustomList, ScrollableAvoidKeyboard } from '../../components';
-import { ProductListItem } from '../../components/Testing';
-import actions from '../../redux/actions';
+import { CustomList, ScrollableAvoidKeyboard } from '../../../components';
+import { ProductListItem } from '../../../components/Testing';
+import actions from '../../../redux/actions';
 
 const MarketView = React.memo<ThemedComponentProps>(
   ({ themedStyle, ...props }) => {

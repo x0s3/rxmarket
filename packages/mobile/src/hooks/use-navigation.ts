@@ -90,44 +90,59 @@ function useNavigationButtonPress(
 }
 
 function useNavigationScreen({
+  componentId,
   actionType,
-  screenName,
+  name,
   options
 }: {
+  componentId: string;
   actionType: ScreenActions;
-  screenName: string;
+  name: string;
   options: Options;
 }) {
   switch (actionType) {
     case 'push':
+      Navigation.push(componentId, {
+        component: {
+          name,
+          options
+        }
+      });
       break;
     case 'pop':
+      Navigation.pop(componentId, { ...options });
       break;
     case 'popTo':
+      Navigation.popTo(componentId, { ...options });
       break;
     case 'popToRoot':
-      break;
-    default:
+      Navigation.popToRoot(componentId, { ...options });
       break;
   }
 }
 
 function useNavigationModal({
   actionType,
-  options
+  componentId = '',
+  name = '',
+  options = {}
 }: {
-  options: Options;
   actionType: ModalActions;
+  componentId?: string;
+  name?: string;
+  options?: Options;
 }) {
   switch (actionType) {
     case 'show':
-      Navigation.showModal({});
+      Navigation.showModal({
+        component: { name, options }
+      });
       break;
     case 'dimiss':
-      Navigation.showModal({});
+      Navigation.dismissModal(componentId, { ...options });
       break;
     case 'dismissAll':
-      Navigation.showModal({});
+      Navigation.dismissAllModals({ ...options });
       break;
   }
 }
