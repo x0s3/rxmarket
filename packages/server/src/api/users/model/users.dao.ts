@@ -12,6 +12,7 @@ export namespace UsersDao {
           email: credentials.email,
           password: credentials.password
         })
+        .populate('restaurants', 'name')
         .select(USER_SECURE_FIELDS)
         .exec()
     );
@@ -20,7 +21,7 @@ export namespace UsersDao {
     from(
       model
         .findById(id)
-        .populate('restaurants')
+        .populate('restaurants', 'name')
         .select(USER_SECURE_FIELDS)
         .exec()
     );
@@ -29,6 +30,7 @@ export namespace UsersDao {
     from(
       model
         .findById(id)
+        .populate('restaurants', 'name')
         .select(USER_PUBLIC_FIELDS)
         .exec()
     );
@@ -37,6 +39,7 @@ export namespace UsersDao {
     from(
       model
         .find()
+        .populate('restaurants', 'name')
         .select(USER_SECURE_FIELDS)
         .exec()
     );
@@ -45,6 +48,7 @@ export namespace UsersDao {
     from(
       model
         .find()
+        .populate('restaurants', 'name')
         .select(USER_PUBLIC_FIELDS)
         .exec()
     );

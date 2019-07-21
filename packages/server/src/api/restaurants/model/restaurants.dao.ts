@@ -1,8 +1,8 @@
 import { from } from 'rxjs';
 import {
   Restaurant,
-  RESTAURANT_PUBLIC_FIELDS,
-  RESTAURANT_SECURE_FIELDS
+  RESTAURANT_DETAIL_FIELDS,
+  RESTAURANT_PUBLIC_FIELDS
 } from './restaurants.model';
 
 export namespace RestaurantDao {
@@ -12,7 +12,7 @@ export namespace RestaurantDao {
     from(
       model
         .findById(id)
-        .select(RESTAURANT_SECURE_FIELDS)
+        .select(RESTAURANT_DETAIL_FIELDS)
         .exec()
     );
 
@@ -20,7 +20,7 @@ export namespace RestaurantDao {
     from(
       model
         .findById(id)
-        .select(RESTAURANT_PUBLIC_FIELDS)
+        .select(RESTAURANT_DETAIL_FIELDS)
         .exec()
     );
 
@@ -28,7 +28,7 @@ export namespace RestaurantDao {
     from(
       model
         .find()
-        .select(RESTAURANT_SECURE_FIELDS)
+        .select(RESTAURANT_PUBLIC_FIELDS)
         .exec()
     );
 

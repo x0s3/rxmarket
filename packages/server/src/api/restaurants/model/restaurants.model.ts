@@ -24,12 +24,14 @@ export class Restaurant extends Typegoose {
   categories?: RestaurantCategory[];
 }
 
-export const RESTAURANT_SECURE_FIELDS = {
-  password: 0
+const RESTAURANT_SECURE_FIELDS = {
+  __v: 0
 };
 
 export const RESTAURANT_PUBLIC_FIELDS = {
-  ...RESTAURANT_SECURE_FIELDS,
-  email: 0,
-  roles: 0
+  ...RESTAURANT_SECURE_FIELDS
+};
+
+export const RESTAURANT_DETAIL_FIELDS = {
+  ...RESTAURANT_SECURE_FIELDS
 };
