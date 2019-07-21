@@ -76,11 +76,17 @@ After having the commit well commented for deploying the changes to the repo jus
 - [Marble.js](https://github.com/marblejs/marble)
 
 
+# IN PROGRESS
+
+- [ ] Client mobile apps
+- [ ] Server PART: I
+
 # TODOS
 
 - [ ] Add FastLane for mobile release apps
 - [ ] Rider App
 - [ ] Manager App / WebApp
+- [ ] Server PART: II
 - [ ] CodePush
 - [ ] FCM
 - [ ] Add some serverless endpoint
