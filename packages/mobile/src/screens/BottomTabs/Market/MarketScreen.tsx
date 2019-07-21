@@ -9,7 +9,7 @@ import {
   ThemeType,
   withStyles
 } from 'react-native-ui-kitten';
-import { CustomRefresh, ScrollableAvoidKeyboard } from '../../../components';
+import { EmptyList } from '../../../components';
 import { RestaurantCard } from '../../../components/market';
 import { useReduxAction, useReduxState } from '../../../hooks/use-redux';
 import actions from '../../../redux/actions';
@@ -34,25 +34,20 @@ const MarketView = React.memo<ThemedComponentProps>(
     return (
       <ApplicationProvider mapping={mapping} theme={darkTheme}>
         <Layout style={{ flex: 1 }}>
-          <ScrollableAvoidKeyboard style={themedStyle.container}>
-            <FlatList<IRestaurant>
-              refreshControl={
-                <CustomRefresh
-                  refreshing={isFetchRestaurants}
-                  onRefresh={fetchRestaurants}
-                />
-              }
-              renderItem={({ item }) => (
-                <RestaurantCard
-                  onPress={() => alert('Push restaurant screen')}
-                  onBucket={() => alert('Added to cart')}
-                  {...item}
-                />
-              )}
-              data={restaurants}
-              keyExtractor={i => i._id}
-            />
-          </ScrollableAvoidKeyboard>
+          <FlatList<IRestaurant>
+            refreshing={isFetchRestaurants}
+            onRefresh={fetchRestaurants}
+            ListEmptyComponent={EmptyList}
+            renderItem={({ item }) => (
+              <RestaurantCard
+                onPress={() => alert('Push restaurant screen')}
+                onBucket={() => alert('Added to cart')}
+                {...item}
+              />
+            )}
+            data={restaurants}
+            keyExtractor={i => i._id}
+          />
         </Layout>
       </ApplicationProvider>
     );
