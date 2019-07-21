@@ -17,6 +17,9 @@ export class Restaurant extends Typegoose {
   @prop()
   description?: string;
 
+  @prop()
+  image?: string;
+
   @arrayProp({ items: String, enum: RestaurantRole })
   roles?: RestaurantRole[];
 

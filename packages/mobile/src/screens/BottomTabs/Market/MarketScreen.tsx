@@ -1,5 +1,7 @@
 import { dark as darkTheme, mapping } from '@eva-design/eva';
+import { IRestaurant } from 'core/src/interfaces';
 import React, { useEffect } from 'react';
+import { FlatList } from 'react-native';
 import {
   ApplicationProvider,
   Layout,
@@ -7,12 +9,8 @@ import {
   ThemeType,
   withStyles
 } from 'react-native-ui-kitten';
-import {
-  CustomList,
-  CustomRefresh,
-  ScrollableAvoidKeyboard
-} from '../../../components';
-import { ProductListItem } from '../../../components/Testing';
+import { CustomRefresh, ScrollableAvoidKeyboard } from '../../../components';
+import { RestaurantCard } from '../../../components/market';
 import { useReduxAction, useReduxState } from '../../../hooks/use-redux';
 import actions from '../../../redux/actions';
 import {
@@ -37,18 +35,22 @@ const MarketView = React.memo<ThemedComponentProps>(
       <ApplicationProvider mapping={mapping} theme={darkTheme}>
         <Layout style={{ flex: 1 }}>
           <ScrollableAvoidKeyboard style={themedStyle.container}>
-            <CustomList
+            <FlatList<IRestaurant>
               refreshControl={
                 <CustomRefresh
                   refreshing={isFetchRestaurants}
                   onRefresh={fetchRestaurants}
                 />
               }
-              numColumns={2}
-              columnWrapperStyle={themedStyle.columnWrapper}
-              renderItem={({ item }) => <ProductListItem {...item} />}
+              renderItem={({ item }) => (
+                <RestaurantCard
+                  onPress={() => alert('Push restaurant screen')}
+                  onBucket={() => alert('Added to cart')}
+                  {...item}
+                />
+              )}
               data={restaurants}
-              keyExtractor={i => i.id}
+              keyExtractor={i => i._id}
             />
           </ScrollableAvoidKeyboard>
         </Layout>
@@ -61,9 +63,9 @@ export const MarketScreen = withStyles(MarketView, (theme: ThemeType) => ({
   container: {
     flex: 1,
     backgroundColor: theme['background-basic-color-1']
-  },
-  columnWrapper: {
-    flex: 1,
-    justifyContent: 'space-around'
   }
+  // columnWrapper: {
+  //   flex: 1,
+  //   justifyContent: 'space-around'
+  // }
 }));

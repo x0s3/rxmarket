@@ -11,6 +11,30 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - libwebp (1.0.2):
+    - libwebp/core (= 1.0.2)
+    - libwebp/dec (= 1.0.2)
+    - libwebp/demux (= 1.0.2)
+    - libwebp/dsp (= 1.0.2)
+    - libwebp/enc (= 1.0.2)
+    - libwebp/mux (= 1.0.2)
+    - libwebp/utils (= 1.0.2)
+    - libwebp/webp (= 1.0.2)
+  - libwebp/core (1.0.2):
+    - libwebp/webp
+  - libwebp/dec (1.0.2):
+    - libwebp/core
+  - libwebp/demux (1.0.2):
+    - libwebp/core
+  - libwebp/dsp (1.0.2):
+    - libwebp/core
+  - libwebp/enc (1.0.2):
+    - libwebp/core
+  - libwebp/mux (1.0.2):
+    - libwebp/core
+  - libwebp/utils (1.0.2):
+    - libwebp/core
+  - libwebp/webp (1.0.2)
   - React (0.60.4):
     - React-Core (= 0.60.4)
     - React-DevSupport (= 0.60.4)
@@ -81,10 +105,20 @@ PODS:
   - React-RCTWebSocket (0.60.4):
     - React-Core (= 0.60.4)
     - React-fishhook (= 0.60.4)
-  - ReactNativeNavigation (3.0.0-alpha.3):
+  - ReactNativeNavigation (3.0.0-alpha.4):
     - React
+  - RNFastImage (7.0.2):
+    - React
+    - SDWebImage (~> 5.0)
+    - SDWebImageWebPCoder (~> 0.2.3)
   - RNVectorIcons (6.6.0):
     - React
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - SDWebImageWebPCoder (0.2.3):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.0)
   - yoga (0.60.4.React)
 
 DEPENDENCIES:
@@ -110,12 +144,16 @@ DEPENDENCIES:
   - React-RCTVibration (from `../../../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../../../node_modules/react-native/Libraries/WebSocket`)
   - ReactNativeNavigation (from `../../../node_modules/react-native-navigation`)
+  - RNFastImage (from `../../../node_modules/react-native-fast-image`)
   - RNVectorIcons (from `../../../node_modules/react-native-vector-icons`)
   - yoga (from `../../../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
+    - libwebp
+    - SDWebImage
+    - SDWebImageWebPCoder
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -162,6 +200,8 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/react-native/Libraries/WebSocket"
   ReactNativeNavigation:
     :path: "../../../node_modules/react-native-navigation"
+  RNFastImage:
+    :path: "../../../node_modules/react-native-fast-image"
   RNVectorIcons:
     :path: "../../../node_modules/react-native-vector-icons"
   yoga:
@@ -172,6 +212,7 @@ SPEC CHECKSUMS:
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
+  libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
   React: ff7ee2ae5ee1c1d9ae2183b4111045b25294bb01
   React-Core: 8e0ea421cae5609d2562850f98421b15030476fa
   React-cxxreact: 326880209990151a7182a813311054e9772ba510
@@ -190,10 +231,13 @@ SPEC CHECKSUMS:
   React-RCTText: e0f224898b13af9aa036ea7cb3d438daa68c1044
   React-RCTVibration: 0bea40cd51bd089bd591a8f74c86e91fdf2666c5
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
-  ReactNativeNavigation: 62b458bb5067d06fee485ede2f51ba7b3a3e7dea
+  ReactNativeNavigation: 7c9d151084339289f26a0375a618c2aef770f8cc
+  RNFastImage: 9b0c22643872bb7494c8d87bbbb66cc4c0d9e7a2
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDWebImageWebPCoder: 7568737603c50f6237850afedd7e9e28e5917e6b
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
-PODFILE CHECKSUM: 5290452a9c3ad07a229ecb3ceb2822a61eff375e
+PODFILE CHECKSUM: c72680ae47f2d2a7026a342ec3e06163989cbe38
 
 COCOAPODS: 1.7.0

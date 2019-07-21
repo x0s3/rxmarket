@@ -19,6 +19,7 @@
     "core": "0.0.0",
     "react": "^16.8.6",
     "react-native": "^0.60.4",
+    "react-native-fast-image": "^7.0.2",
     "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-native-navigation": "^3.0.0-alpha.4",
     "react-native-ui-kitten": "^4.1.0",
