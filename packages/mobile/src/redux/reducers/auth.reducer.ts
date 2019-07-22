@@ -12,7 +12,7 @@ export const authReducer = createReducer<IAuthInitialState, RootAction>({
   isSigning: false,
   error: false
 })
-  .handleAction(signIn.request, (state, _) => ({
+  .handleAction(signIn.request, state => ({
     ...state,
     isSigning: true,
     error: false
@@ -22,12 +22,12 @@ export const authReducer = createReducer<IAuthInitialState, RootAction>({
     isSigning: false,
     token: action.payload.token
   }))
-  .handleAction(signIn.failure, (state, _) => ({
+  .handleAction(signIn.failure, state => ({
     ...state,
     isSigning: false,
     error: true
   }))
-  .handleAction(signIn.cancel, (state, _) => ({
+  .handleAction(signIn.cancel, state => ({
     ...state,
     isSigning: false,
     error: false

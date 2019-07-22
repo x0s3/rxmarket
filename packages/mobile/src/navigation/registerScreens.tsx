@@ -1,5 +1,5 @@
 import { Navigation } from 'react-native-navigation';
-import { Provider } from 'react-redux';
+import CustomProvider from '../redux/Provider';
 import { configureStore } from '../redux/store';
 import { AuthScreen } from '../screens/AuthScreen';
 import {
@@ -22,31 +22,31 @@ export function registerScreens(): void {
   Navigation.registerComponentWithRedux(
     AUTH_SCREEN,
     () => AuthScreen,
-    Provider,
+    CustomProvider,
     store
   );
   Navigation.registerComponentWithRedux(
     MARKET_SCREEN,
     () => MarketScreen,
-    Provider,
+    CustomProvider,
     store
   );
   Navigation.registerComponentWithRedux(
     SEARCH_SCREEN,
     () => SearchScreen,
-    Provider,
+    CustomProvider,
     store
   );
   Navigation.registerComponentWithRedux(
     BILLS_SCREEN,
     () => BillsScreen,
-    Provider,
+    CustomProvider,
     store
   );
   Navigation.registerComponentWithRedux(
     PROFILE_SCREEN,
     () => ProfileScreen,
-    Provider,
+    CustomProvider,
     store
   );
 }

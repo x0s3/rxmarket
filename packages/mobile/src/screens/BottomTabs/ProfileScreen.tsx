@@ -1,8 +1,5 @@
-import { dark as darkTheme, mapping } from '@eva-design/eva';
 import React from 'react';
 import {
-  ApplicationProvider,
-  Layout,
   Text,
   ThemedComponentProps,
   ThemeType,
@@ -27,13 +24,9 @@ const ProfileView = React.memo<ProfileViewProps>(
     }, props.componentId);
 
     return (
-      <ApplicationProvider mapping={mapping} theme={darkTheme}>
-        <Layout style={{ flex: 1 }}>
-          <ScrollableAvoidKeyboard style={themedStyle.container}>
-            <Text>Profile User</Text>
-          </ScrollableAvoidKeyboard>
-        </Layout>
-      </ApplicationProvider>
+      <ScrollableAvoidKeyboard style={themedStyle.container}>
+        <Text>Profile User</Text>
+      </ScrollableAvoidKeyboard>
     );
   }
 );

@@ -7,3 +7,4 @@ export * from './CustomList';
 export * from './RefreshControl';
 export * from './NativeImage';
 export * from './EmptyList';
+export * from './RootStyleWrapper';

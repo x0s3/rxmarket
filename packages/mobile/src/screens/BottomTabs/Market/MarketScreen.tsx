@@ -1,10 +1,7 @@
-import { dark as darkTheme, mapping } from '@eva-design/eva';
 import { IRestaurant } from 'core/src/interfaces';
 import React, { useEffect } from 'react';
 import { FlatList } from 'react-native';
 import {
-  ApplicationProvider,
-  Layout,
   ThemedComponentProps,
   ThemeType,
   withStyles
@@ -32,24 +29,20 @@ const MarketView = React.memo<ThemedComponentProps>(
     }, []);
 
     return (
-      <ApplicationProvider mapping={mapping} theme={darkTheme}>
-        <Layout style={{ flex: 1 }}>
-          <FlatList<IRestaurant>
-            refreshing={isFetchRestaurants}
-            onRefresh={fetchRestaurants}
-            ListEmptyComponent={EmptyList}
-            renderItem={({ item }) => (
-              <RestaurantCard
-                onPress={() => alert('Push restaurant screen')}
-                onBucket={() => alert('Added to cart')}
-                {...item}
-              />
-            )}
-            data={restaurants}
-            keyExtractor={i => i._id}
+      <FlatList<IRestaurant>
+        refreshing={isFetchRestaurants}
+        onRefresh={fetchRestaurants}
+        ListEmptyComponent={EmptyList}
+        renderItem={({ item }) => (
+          <RestaurantCard
+            onPress={() => alert('Push restaurant screen')}
+            onBucket={() => alert('Added to cart')}
+            {...item}
           />
-        </Layout>
-      </ApplicationProvider>
+        )}
+        data={restaurants}
+        keyExtractor={i => i._id}
+      />
     );
   }
 );

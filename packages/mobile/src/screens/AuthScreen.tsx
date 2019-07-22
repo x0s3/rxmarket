@@ -1,11 +1,8 @@
-import { dark as darkTheme, mapping } from '@eva-design/eva';
 import { LoginCredentials } from 'core/src/interfaces';
 import React, { useCallback, useState } from 'react';
 import { View } from 'react-native';
 import {
-  ApplicationProvider,
   Button,
-  Layout,
   Text,
   ThemedComponentProps,
   ThemeType,
@@ -16,14 +13,7 @@ import { AuthForm, ScrollableAvoidKeyboard, textStyle } from '../components';
 import { homeStack } from '../navigation';
 import { signIn } from '../redux/actions/auth.actions';
 
-interface ComponentProps {
-  onSignInPress: (formData: { email: string; password: string }) => void;
-  onSignUpPress: () => void;
-  onForgotPasswordPress: () => void;
-  componentId: string;
-}
-
-export type AuthViewProps = ThemedComponentProps & ComponentProps;
+export type AuthViewProps = ThemedComponentProps & { componentId: string };
 
 const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
   const [dataLogin, setDataLogin] = useState<LoginCredentials>({
@@ -37,43 +27,39 @@ const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
   ]);
 
   return (
-    <ApplicationProvider mapping={mapping} theme={darkTheme}>
-      <Layout style={{ flex: 1 }}>
-        <ScrollableAvoidKeyboard style={themedStyle.container}>
-          <View style={themedStyle.headerContainer}>
-            <Text style={themedStyle.helloLabel} category={'h1'}>
-              RxMarket
-            </Text>
-            <Text style={themedStyle.signInLabel} category={'s1'}>
-              Sign in to your account
-            </Text>
-          </View>
-          <AuthForm
-            style={themedStyle.formContainer}
-            onForgotPasswordPress={() => alert('WIP')}
-            onDataChange={setDataLogin}
-          />
-          <Button
-            style={themedStyle.signInButton}
-            textStyle={textStyle.button}
-            size={'giant'}
-            disabled={false}
-            onPress={onSignIn}
-          >
-            SIGN IN
-          </Button>
-          <Button
-            style={themedStyle.signUpButton}
-            textStyle={themedStyle.signUpText}
-            appearance={'ghost'}
-            activeOpacity={0.75}
-            onPress={homeStack}
-          >
-            Don't have an account? Create
-          </Button>
-        </ScrollableAvoidKeyboard>
-      </Layout>
-    </ApplicationProvider>
+    <ScrollableAvoidKeyboard style={themedStyle.container}>
+      <View style={themedStyle.headerContainer}>
+        <Text style={themedStyle.helloLabel} category={'h1'}>
+          RxMarket
+        </Text>
+        <Text style={themedStyle.signInLabel} category={'s1'}>
+          Sign in to your account
+        </Text>
+      </View>
+      <AuthForm
+        style={themedStyle.formContainer}
+        onForgotPasswordPress={() => alert('WIP')}
+        onDataChange={setDataLogin}
+      />
+      <Button
+        style={themedStyle.signInButton}
+        textStyle={textStyle.button}
+        size={'giant'}
+        disabled={false}
+        onPress={onSignIn}
+      >
+        SIGN IN
+      </Button>
+      <Button
+        style={themedStyle.signUpButton}
+        textStyle={themedStyle.signUpText}
+        appearance={'ghost'}
+        activeOpacity={0.75}
+        onPress={homeStack}
+      >
+        Don't have an account? Create
+      </Button>
+    </ScrollableAvoidKeyboard>
   );
 });
 
