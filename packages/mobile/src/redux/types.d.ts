@@ -1,4 +1,4 @@
-import { StateType, ActionType } from 'typesafe-actions';
+import { ActionType, StateType } from 'typesafe-actions';
 
 declare module 'typesafe-actions' {
   export type Store = StateType<typeof import('./store').configureStore>;
