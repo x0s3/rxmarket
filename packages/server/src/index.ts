@@ -1,10 +1,16 @@
-import { createContext } from '@marblejs/core';
-import httpListener from './app';
-import { Database, Server } from './connection';
+import { NestFactory } from '@nestjs/core';
+import {
+  FastifyAdapter,
+  NestFastifyApplication
+} from '@nestjs/platform-fastify';
+import { AppModule } from './app.module';
 
-const bootstrap = async () => {
-  await Database.connect();
-  await Server.create(httpListener.run(createContext()));
-};
+async function bootstrap() {
+  const app = await NestFactory.create<NestFastifyApplication>(
+    AppModule,
+    new FastifyAdapter()
+  );
+  await app.listen(3000);
+}
 
 bootstrap();

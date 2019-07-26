@@ -9,9 +9,7 @@ module.exports = {
     '.d.ts$',
     '.spec.ts',
     'src/index.ts',
-    'src/config',
-    'connection/database',
-    'connection/server'
+    'src/config'
   ],
   collectCoverageFrom: ['src/**/*.ts'],
   moduleFileExtensions: ['ts', 'js', 'json']
