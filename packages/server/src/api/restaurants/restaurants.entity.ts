@@ -1,27 +1,26 @@
-import { RestaurantCategory, RestaurantRole } from 'core/src/interfaces';
-import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
-
-export enum UserRole {
-  USER = 'user',
-  ADMIN = 'admin'
-}
+import {
+  IRestaurant,
+  RestaurantCategory,
+  RestaurantRole
+} from 'core/src/interfaces';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('restaurants')
-export class Restaurant {
-  @ObjectIdColumn()
-  id?: ObjectID;
+export class Restaurant implements IRestaurant {
+  @PrimaryGeneratedColumn()
+  id!: number;
 
-  @Column()
-  name?: string;
+  @Column({ nullable: false, length: 50 })
+  name!: string;
 
-  @Column()
+  @Column({ nullable: false, length: 15 })
   phone?: string;
 
   @Column()
   email?: string;
 
   @Column({ default: 0 })
-  rate?: number;
+  rate!: number;
 
   @Column()
   description?: string;
@@ -29,9 +28,9 @@ export class Restaurant {
   @Column()
   image?: string;
 
-  @Column({ type: 'enum', enum: RestaurantRole })
-  roles?: RestaurantRole[];
+  @Column({ type: 'text', default: RestaurantRole.LOCAL })
+  roles!: RestaurantRole[];
 
-  @Column({ type: 'enum', enum: RestaurantCategory })
+  @Column({ type: 'text' })
   categories?: RestaurantCategory[];
 }

@@ -1,5 +1,4 @@
-import { Exclude, Transform } from 'class-transformer';
-import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Restaurant } from '../restaurants/restaurants.entity';
 
 export enum UserRole {
@@ -9,9 +8,8 @@ export enum UserRole {
 
 @Entity('users')
 export class User {
-  @ObjectIdColumn()
-  @Transform((id: ObjectID) => id.toHexString(), { toPlainOnly: true })
-  id?: ObjectID;
+  @PrimaryGeneratedColumn()
+  id?: number;
 
   @Column()
   firstName?: string;
@@ -22,16 +20,18 @@ export class User {
   @Column()
   email?: string;
 
-  @Exclude()
   @Column({ select: false })
   password?: string;
 
   @Column()
   phone?: string;
 
-  @Column({ type: 'enum', enum: UserRole, default: UserRole.USER })
+  @Column({ type: 'text', default: UserRole.USER })
   roles?: UserRole[];
 
-  @Column(type => Restaurant)
+  @OneToMany(type => Restaurant, restaurant => restaurant.id, {
+    primary: true,
+    nullable: false
+  })
   restaurants?: Restaurant[];
 }

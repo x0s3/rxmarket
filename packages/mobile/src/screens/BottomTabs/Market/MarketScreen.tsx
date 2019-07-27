@@ -41,7 +41,7 @@ const MarketView = React.memo<ThemedComponentProps>(
           />
         )}
         data={restaurants}
-        keyExtractor={i => i._id}
+        keyExtractor={i => i.id + i.name}
       />
     );
   }

@@ -13,15 +13,13 @@ export enum RestaurantCategory {
 }
 
 export interface IRestaurant {
-  readonly _id: string;
+  readonly id: number;
   readonly name: string;
-  readonly phone: string;
-  readonly image?: string;
-  readonly price?: number;
-  readonly type?: any;
+  readonly phone?: string;
   readonly email?: string;
-  readonly rate?: number;
+  readonly rate: number;
   readonly description?: string;
-  readonly roles?: RestaurantRole[];
+  readonly image?: string;
+  readonly roles: RestaurantRole[];
   readonly categories?: RestaurantCategory[];
 }
