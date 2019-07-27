@@ -22,7 +22,7 @@ lerna add [--dev] package-name [--scope package name ex: components]
  yarn dev:mobile
 ```
 
-#### Start desktop dev server
+#### Start dev server
 
 ```sh
  yarn dev:server[-watch]

@@ -1,4 +1,10 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import {
+  ClassSerializerInterceptor,
+  Controller,
+  Get,
+  UseGuards,
+  UseInterceptors
+} from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { from, Observable } from 'rxjs';
 import { User } from './users.entity';
@@ -9,6 +15,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @UseGuards(AuthGuard('jwt'))
+  @UseInterceptors(ClassSerializerInterceptor)
   @Get()
   findAll(): Observable<User[]> {
     return from(this.usersService.findAll());
