@@ -5,12 +5,17 @@ import { getRestaurants } from '../actions/restaurants.actions';
 export interface IRestaurantsInitialState {
   readonly isFetching: boolean;
   readonly restaurants: IRestaurant[];
+  readonly restaurantFetched: IRestaurant;
   readonly error: boolean;
 }
 
-export const restaurantReducer = createReducer<IRestaurantsInitialState, RootAction>({
+export const restaurantReducer = createReducer<
+  IRestaurantsInitialState,
+  RootAction
+>({
   isFetching: false,
   restaurants: [],
+  restaurantFetched: {},
   error: false
 })
   .handleAction(getRestaurants.request, (state, _) => ({

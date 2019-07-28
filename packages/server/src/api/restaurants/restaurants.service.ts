@@ -14,4 +14,8 @@ export class RestaurantsService {
   findAll(): Observable<Restaurant[]> {
     return from(this.restaurantRepository.find());
   }
+
+  findOneById(id: number): Observable<Restaurant> {
+    return from(this.restaurantRepository.findOneOrFail({ id }));
+  }
 }

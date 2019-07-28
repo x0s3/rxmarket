@@ -7,3 +7,5 @@ export const getRestaurants = (state: RootState): IRestaurant[] =>
 export const getFetchingRestaurants = (state: RootState): boolean =>
   state.restaurants.isFetching;
 
+export const getRestaurantFeched = (state: RootState): IRestaurant =>
+  state.restaurants.restaurantFetched;
