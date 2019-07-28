@@ -12,6 +12,7 @@ module.exports = {
     path.resolve(__dirname, '../..')
   ],
   transformer: {
+    minifierPath: 'metro-minify-terser',
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: true,
