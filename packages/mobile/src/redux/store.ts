@@ -1,10 +1,10 @@
 import { applyMiddleware, compose, createStore, Store } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
-import { ajax } from 'rxjs/ajax';
 import { Services } from 'ServiceTypes';
 import { RootAction, RootState } from 'typesafe-actions';
-import { rootEpic } from './epics';
+import rootEpic from './epics';
 import { rootReducer } from './reducers';
+import services from './services';
 
 export function configureStore(): Store {
   const epicMiddleware = createEpicMiddleware<
@@ -13,10 +13,7 @@ export function configureStore(): Store {
     RootState,
     Services
   >({
-    dependencies: {
-      ajax,
-      baseURL: `http://192.168.1.64:3000`
-    }
+    dependencies: services
   });
 
   const middlewares = [epicMiddleware];
