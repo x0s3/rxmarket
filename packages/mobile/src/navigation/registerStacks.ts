@@ -20,13 +20,6 @@ export function authStack(): void {
 
 export function homeStack(): void {
   const sharedOptions = {
-    topBar: {
-      background: { color: '#1A2138' },
-      title: {
-        fontFamily: 'opensans-bold',
-        color: '#F7F9FC'
-      }
-    },
     bottomTab: {
       iconColor: '#F7F9FC',
       selectedIconColor: '#42AAFF'
@@ -122,8 +115,18 @@ export function initialStack(): void {
     popGesture: false,
     statusBar: {
       visible: true,
-      style: 'dark',
+      style: 'light',
       backgroundColor: '#293157'
+    },
+    topBar: {
+      background: { color: '#1A2138' },
+      title: {
+        fontFamily: 'opensans-bold',
+        color: '#F7F9FC'
+      },
+      backButton: {
+        color: '#F7F9FC'
+      }
     },
     layout: {
       orientation: ['portrait']

@@ -93,18 +93,21 @@ function useNavigationScreen({
   componentId,
   actionType,
   name,
+  passProps,
   options
 }: {
   componentId: string;
   actionType: ScreenActions;
   name: string;
-  options: Options;
+  passProps?: any;
+  options?: Options;
 }) {
   switch (actionType) {
     case 'push':
       Navigation.push(componentId, {
         component: {
           name,
+          passProps,
           options
         }
       });

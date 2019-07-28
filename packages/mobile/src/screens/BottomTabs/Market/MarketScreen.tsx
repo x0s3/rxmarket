@@ -6,18 +6,19 @@ import {
   ThemeType,
   withStyles
 } from 'react-native-ui-kitten';
-import { EmptyList } from '../../../components';
-import { RestaurantCard } from '../../../components/market';
+import { EmptyList, RestaurantCard } from '../../../components';
+import { useNavigationScreen } from '../../../hooks/use-navigation';
 import { useReduxAction, useReduxState } from '../../../hooks/use-redux';
+import { RESTAURANT_DETAILS_SCREEN } from '../../../navigation';
 import actions from '../../../redux/actions';
 import {
   getFetchingRestaurants,
   getRestaurants
 } from '../../../redux/selectors';
 
-const renderItem = ({ item }) => (
+const renderItem = ({ item, pushDetails }) => (
   <RestaurantCard
-    onPress={() => alert(`${item.name}`)}
+    onPress={() => pushDetails(item.id, item.name)}
     onBucket={() => alert(`${item.name} has ${item.rate} stars`)}
     {...item}
   />
@@ -25,9 +26,35 @@ const renderItem = ({ item }) => (
 
 const keyExtractor = (item: IRestaurant) => item.id + item.name;
 
-const MarketView = React.memo<ThemedComponentProps>(
+const MarketView = React.memo<ThemedComponentProps & { componentId: string }>(
   ({ themedStyle, ...props }) => {
-    const renderItemCall = useCallback(({ item }) => renderItem({ item }), []);
+    const pushDetails = useCallback(
+      (id, name) =>
+        useNavigationScreen({
+          componentId: props.componentId,
+          actionType: 'push',
+          name: RESTAURANT_DETAILS_SCREEN,
+          options: {
+            topBar: {
+              title: {
+                text: name
+              }
+            },
+            bottomTabs: {
+              visible: false,
+              drawBehind: true,
+              animate: true
+            }
+          },
+          passProps: { id }
+        }),
+      []
+    );
+    const renderItemCall = useCallback(
+      ({ item }) => renderItem({ item, pushDetails }),
+      []
+    );
+    
     const fetchRestaurants = useReduxAction(
       actions.restaurantActions.getRestaurants.request
     );

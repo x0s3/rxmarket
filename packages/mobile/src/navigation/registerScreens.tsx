@@ -13,6 +13,7 @@ import {
   BILLS_SCREEN,
   MARKET_SCREEN,
   PROFILE_SCREEN,
+  RESTAURANT_DETAILS_SCREEN,
   SEARCH_SCREEN
 } from './constants';
 
@@ -45,6 +46,12 @@ export function registerScreens(): void {
   );
   Navigation.registerComponentWithRedux(
     PROFILE_SCREEN,
+    () => ProfileScreen,
+    CustomProvider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    RESTAURANT_DETAILS_SCREEN,
     () => ProfileScreen,
     CustomProvider,
     store
