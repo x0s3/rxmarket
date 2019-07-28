@@ -1,13 +1,14 @@
 import { Navigation } from 'react-native-navigation';
 import CustomProvider from '../redux/Provider';
 import { configureStore } from '../redux/store';
-import { AuthScreen } from '../screens/AuthScreen';
 import {
+  AuthScreen,
   BillsScreen,
   MarketScreen,
   ProfileScreen,
+  RestaurantScreen,
   SearchScreen
-} from '../screens/BottomTabs';
+} from '../screens';
 import {
   AUTH_SCREEN,
   BILLS_SCREEN,
@@ -52,7 +53,7 @@ export function registerScreens(): void {
   );
   Navigation.registerComponentWithRedux(
     RESTAURANT_DETAILS_SCREEN,
-    () => ProfileScreen,
+    () => RestaurantScreen,
     CustomProvider,
     store
   );

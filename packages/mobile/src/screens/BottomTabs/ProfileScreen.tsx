@@ -1,21 +1,15 @@
 import React from 'react';
-import {
-  Text,
-  ThemedComponentProps,
-  ThemeType,
-  withStyles
-} from 'react-native-ui-kitten';
-import { ScrollableAvoidKeyboard } from '../../components';
+import { Text, ThemeType, withStyles } from 'react-native-ui-kitten';
+import { ScrollableAvoidKeyboard, ViewProps } from '../../components';
 import { useNavigationComponentDidAppear } from '../../hooks/use-navigation';
 
 interface ComponentProps {
   onSignInPress: (formData: { email: string; password: string }) => void;
   onSignUpPress: () => void;
   onForgotPasswordPress: () => void;
-  componentId: string;
 }
 
-export type ProfileViewProps = ThemedComponentProps & ComponentProps;
+export type ProfileViewProps = ViewProps & ComponentProps;
 
 const ProfileView = React.memo<ProfileViewProps>(
   ({ themedStyle, ...props }) => {

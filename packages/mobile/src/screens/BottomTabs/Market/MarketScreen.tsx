@@ -1,12 +1,8 @@
 import { IRestaurant } from 'core/src/interfaces';
 import React, { useCallback, useEffect } from 'react';
 import { FlatList } from 'react-native';
-import {
-  ThemedComponentProps,
-  ThemeType,
-  withStyles
-} from 'react-native-ui-kitten';
-import { EmptyList, RestaurantCard } from '../../../components';
+import { ThemeType, withStyles } from 'react-native-ui-kitten';
+import { EmptyList, RestaurantCard, ViewProps } from '../../../components';
 import { useNavigationScreen } from '../../../hooks/use-navigation';
 import { useReduxAction, useReduxState } from '../../../hooks/use-redux';
 import { RESTAURANT_DETAILS_SCREEN } from '../../../navigation';
@@ -26,58 +22,56 @@ const renderItem = ({ item, pushDetails }) => (
 
 const keyExtractor = (item: IRestaurant) => item.id + item.name;
 
-const MarketView = React.memo<ThemedComponentProps & { componentId: string }>(
-  ({ themedStyle, ...props }) => {
-    const pushDetails = useCallback(
-      (id, name) =>
-        useNavigationScreen({
-          componentId: props.componentId,
-          actionType: 'push',
-          name: RESTAURANT_DETAILS_SCREEN,
-          options: {
-            topBar: {
-              title: {
-                text: name
-              }
-            },
-            bottomTabs: {
-              visible: false,
-              drawBehind: true,
-              animate: true
+const MarketView = React.memo<ViewProps>(({ themedStyle, ...props }) => {
+  const pushDetails = useCallback(
+    (id, name) =>
+      useNavigationScreen({
+        componentId: props.componentId,
+        actionType: 'push',
+        name: RESTAURANT_DETAILS_SCREEN,
+        options: {
+          topBar: {
+            title: {
+              text: name
             }
           },
-          passProps: { id }
-        }),
-      []
-    );
-    const renderItemCall = useCallback(
-      ({ item }) => renderItem({ item, pushDetails }),
-      []
-    );
-    
-    const fetchRestaurants = useReduxAction(
-      actions.restaurantActions.getRestaurants.request
-    );
+          bottomTabs: {
+            visible: false,
+            drawBehind: true,
+            animate: true
+          }
+        },
+        passProps: { id }
+      }),
+    []
+  );
+  const renderItemCall = useCallback(
+    ({ item }) => renderItem({ item, pushDetails }),
+    []
+  );
 
-    const restaurants = useReduxState(getRestaurants);
-    const isFetchRestaurants = useReduxState(getFetchingRestaurants);
+  const fetchRestaurants = useReduxAction(
+    actions.restaurantActions.getRestaurants.request
+  );
 
-    useEffect(() => {
-      fetchRestaurants();
-    }, []);
+  const restaurants = useReduxState(getRestaurants);
+  const isFetchRestaurants = useReduxState(getFetchingRestaurants);
 
-    return (
-      <FlatList<IRestaurant>
-        refreshing={isFetchRestaurants}
-        onRefresh={fetchRestaurants}
-        ListEmptyComponent={EmptyList}
-        renderItem={renderItemCall}
-        data={restaurants}
-        keyExtractor={keyExtractor}
-      />
-    );
-  }
-);
+  useEffect(() => {
+    fetchRestaurants();
+  }, []);
+
+  return (
+    <FlatList<IRestaurant>
+      refreshing={isFetchRestaurants}
+      onRefresh={fetchRestaurants}
+      ListEmptyComponent={EmptyList}
+      renderItem={renderItemCall}
+      data={restaurants}
+      keyExtractor={keyExtractor}
+    />
+  );
+});
 
 export const MarketScreen = withStyles(MarketView, (theme: ThemeType) => ({
   container: {

@@ -1,21 +1,18 @@
 import { LoginCredentials } from 'core/src/interfaces';
 import React, { useCallback, useState } from 'react';
 import { View } from 'react-native';
-import {
-  Button,
-  Text,
-  ThemedComponentProps,
-  ThemeType,
-  withStyles
-} from 'react-native-ui-kitten';
+import { Button, Text, ThemeType, withStyles } from 'react-native-ui-kitten';
 import { useDispatch as useReduxAction } from 'react-redux';
-import { AuthForm, ScrollableAvoidKeyboard, textStyle } from '../components';
+import {
+  AuthForm,
+  ScrollableAvoidKeyboard,
+  textStyle,
+  ViewProps
+} from '../components';
 import { homeStack } from '../navigation';
 import { signIn } from '../redux/actions/auth.actions';
 
-export type AuthViewProps = ThemedComponentProps & { componentId: string };
-
-const AuthView = React.memo<AuthViewProps>(({ themedStyle, ...props }) => {
+const AuthView = React.memo<ViewProps>(({ themedStyle, ...props }) => {
   const [dataLogin, setDataLogin] = useState<LoginCredentials>({
     email: '',
     password: ''

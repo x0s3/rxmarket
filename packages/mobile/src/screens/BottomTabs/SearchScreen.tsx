@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, ThemeType, withStyles } from 'react-native-ui-kitten';
-import { ScrollableAvoidKeyboard } from '../../components';
+import { ScrollableAvoidKeyboard, ViewProps } from '../../components';
 
-const SearchView = React.memo<any>(({ themedStyle, ...props }) => {
+const SearchView = React.memo<ViewProps>(({ themedStyle, ...props }) => {
   return (
     <ScrollableAvoidKeyboard style={themedStyle.container}>
       <Text>Search Restaurant</Text>
