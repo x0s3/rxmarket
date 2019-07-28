@@ -21,6 +21,8 @@ export class UsersService {
   }
 
   findAll(): Observable<User[]> {
-    return from(this.userRepository.find());
+    return from(this.userRepository.find({
+      relations:['restaurants']
+    }));
   }
 }

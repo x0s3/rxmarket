@@ -1,4 +1,10 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn
+} from 'typeorm';
 import { Restaurant } from '../restaurants/restaurants.entity';
 
 export enum UserRole {
@@ -29,9 +35,9 @@ export class User {
   @Column({ type: 'text', default: UserRole.USER })
   roles?: UserRole[];
 
-  @OneToMany(type => Restaurant, restaurant => restaurant.id, {
-    primary: true,
-    nullable: false
+  @ManyToMany(type => Restaurant, {
+    cascade: true
   })
+  @JoinTable()
   restaurants?: Restaurant[];
 }
