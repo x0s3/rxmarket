@@ -1,5 +1,5 @@
 import { IRestaurant } from 'core/src/interfaces';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { FlatList } from 'react-native';
 import {
   ThemedComponentProps,
@@ -15,8 +15,19 @@ import {
   getRestaurants
 } from '../../../redux/selectors';
 
+const renderItem = ({ item }) => (
+  <RestaurantCard
+    onPress={() => alert(`${item.name}`)}
+    onBucket={() => alert(`${item.name} has ${item.rate} stars`)}
+    {...item}
+  />
+);
+
+const keyExtractor = (item: IRestaurant) => item.id + item.name;
+
 const MarketView = React.memo<ThemedComponentProps>(
   ({ themedStyle, ...props }) => {
+    const renderItemCall = useCallback(({ item }) => renderItem({ item }), []);
     const fetchRestaurants = useReduxAction(
       actions.restaurantActions.getRestaurants.request
     );
@@ -33,15 +44,9 @@ const MarketView = React.memo<ThemedComponentProps>(
         refreshing={isFetchRestaurants}
         onRefresh={fetchRestaurants}
         ListEmptyComponent={EmptyList}
-        renderItem={({ item }) => (
-          <RestaurantCard
-            onPress={() => alert('Push restaurant screen')}
-            onBucket={() => alert('Added to cart')}
-            {...item}
-          />
-        )}
+        renderItem={renderItemCall}
         data={restaurants}
-        keyExtractor={i => i.id + i.name}
+        keyExtractor={keyExtractor}
       />
     );
   }

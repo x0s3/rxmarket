@@ -26,6 +26,7 @@ const AuthFormComponent = React.memo<SignInFormProps>(
             placeholder={'User Email'}
             icon={() => <Ionicon name={'md-mail'} />}
             validator={NameValidator}
+            keyboardType={'email-address'}
             textContentType={'emailAddress'}
             onChangeText={(email: string) =>
               props.onDataChange((d: any) => ({ ...d, email }))

@@ -41,7 +41,7 @@ const RestaurantCardItem = React.memo<RestaurantCardProps>(
             style={themedStyle.buyButton}
             textStyle={textStyle.button}
             icon={() => (
-              <Ionicon color={'#FFFFFF'} size={20} name={'md-cart'} />
+              <Ionicon color={'#FFFFFF'} size={20} name={'md-heart'} />
             )}
             onPress={onBucket}
           />
