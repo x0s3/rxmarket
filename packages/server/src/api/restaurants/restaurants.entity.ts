@@ -28,9 +28,16 @@ export class Restaurant implements IRestaurant {
   @Column()
   image?: string;
 
-  @Column({ type: 'text', default: RestaurantRole.LOCAL })
+  @Column('timestamp with time zone', { default: () => 'CURRENT_TIMESTAMP' })
+  // tslint:disable-next-line: variable-name
+  created_at?: Date;
+
+  @Column('simple-array', { array: true, default: [RestaurantRole.LOCAL] })
   roles!: RestaurantRole[];
 
-  @Column({ type: 'text' })
+  @Column('simple-array', {
+    array: true,
+    default: [RestaurantCategory.HEALTHY]
+  })
   categories?: RestaurantCategory[];
 }

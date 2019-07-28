@@ -1,15 +1,15 @@
 export enum RestaurantRole {
-  DELIVERY = 'DELIVERY_RESTAURANT',
-  LOCAL = 'LOCAL_RESTAURANT'
+  DELIVERY = 'Delivery',
+  LOCAL = 'Local'
 }
 
 export enum RestaurantCategory {
-  HEALTHY = 'HEALTHY_RESTAURANT',
-  VEGAN = 'VEGAN_RESTAURANT',
-  ITALIAN = 'ITALIAN_RESTAURANT',
-  FAST_FOOD = 'FAST_FOOD_RESTAURANT',
-  INDIAN = 'INDIAN_RESTAURANT',
-  SPANISH = 'SPANISH_RESTAURANT '
+  HEALTHY = 'Healthy',
+  VEGAN = 'Vegan',
+  ITALIAN = 'Italian',
+  FAST_FOOD = 'Fast Food',
+  INDIAN = 'Indian',
+  SPANISH = 'Spanish '
 }
 
 export interface IRestaurant {

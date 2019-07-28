@@ -32,8 +32,12 @@ export class User {
   @Column()
   phone?: string;
 
-  @Column({ type: 'text', default: UserRole.USER })
+  @Column('simple-array', { array: true, default: [UserRole.USER] })
   roles?: UserRole[];
+
+  @Column('timestamp with time zone', { default: () => 'CURRENT_TIMESTAMP' })
+  // tslint:disable-next-line: variable-name
+  created_at?: Date;
 
   @ManyToMany(type => Restaurant, {
     cascade: true
