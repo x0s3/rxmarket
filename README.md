@@ -73,8 +73,8 @@ After having the commit well commented for deploying the changes to the repo jus
 - [React-Redux](https://github.com/reduxjs/react-redux)
 - [Redux-Observable](https://github.com/redux-observable/redux-observable/)
 - [RxJS](https://github.com/ReactiveX/RxJS)
-- [Marble.js](https://github.com/marblejs/marble)
-
+- [NestJS](https://nestjs.com)
+- [TypeORM](https://github.com/typeorm/typeorm)
 
 # IN PROGRESS
 
