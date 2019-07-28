@@ -1,5 +1,4 @@
 import { IUser } from 'core/src/interfaces';
-import { Epic } from 'redux-observable';
 import { from, of, pipe } from 'rxjs';
 import {
   catchError,
@@ -9,16 +8,16 @@ import {
   takeUntil,
   tap
 } from 'rxjs/operators';
-import { isActionOf } from 'typesafe-actions';
+import { isActionOf, RootEpic } from 'typesafe-actions';
 import { homeStack } from '../../navigation';
 import { signIn } from '../actions/auth.actions';
 
-const signInEpic$: Epic = (action$, store$, { post, baseURL }) =>
+const signInEpic$: RootEpic = (action$, store$, { ajax, baseURL }) =>
   action$.pipe(
     filter(isActionOf(signIn.request)),
     switchMap(action =>
       from(
-        post(
+        ajax.post(
           `${baseURL}/auth/login`,
           {
             email: action.payload.email,

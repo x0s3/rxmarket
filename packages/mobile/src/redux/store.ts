@@ -1,18 +1,21 @@
 import { applyMiddleware, compose, createStore, Store } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import { ajax } from 'rxjs/ajax';
+import { Services } from 'ServiceTypes';
+import { RootAction, RootState } from 'typesafe-actions';
 import { rootEpic } from './epics';
 import { rootReducer } from './reducers';
 
 export function configureStore(): Store {
-  const epicMiddleware = createEpicMiddleware({
+  const epicMiddleware = createEpicMiddleware<
+    RootAction,
+    RootAction,
+    RootState,
+    Services
+  >({
     dependencies: {
-      getJSON: ajax.getJSON,
-      post: ajax.post,
-      put: ajax.put,
-      delete: ajax.delete,
-      patch: ajax.patch,
-      baseURL: `USE ENDPOINT ENVS`
+      ajax,
+      baseURL: `http://192.168.1.64:3000`
     }
   });
 
