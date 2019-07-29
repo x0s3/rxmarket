@@ -9,7 +9,7 @@ declare module 'typesafe-actions' {
 
   export type RootAction = ActionType<typeof import('./actions').default>;
 
-  export type RootEpic = Epic<RootAction, RootAction, RootState, Services>;
+  export type RootEpic = Epic<RootAction, any, RootState, Services>;
 
   interface Types {
     RootAction: RootAction;

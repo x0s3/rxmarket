@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ActionType, RootAction, RootState } from 'typesafe-actions';
+import { RootState } from 'typesafe-actions';
 
-export function useReduxAction<AT extends ActionType<RootAction>>(
-  actionCreator: AT
-) {
+type ActionCreator = (...args: any) => any;
+
+export function useReduxAction<AC extends ActionCreator>(actionCreator: AC) {
   const dispatch = useDispatch();
 
   return (
-    ...args: AT extends ((...args: infer Args) => any) ? Args : any[]
+    ...args: AC extends ((...args: infer Args) => any) ? Args : any[]
   ) => {
     dispatch(actionCreator(...(args as any[])));
   };

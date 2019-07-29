@@ -20,7 +20,7 @@ const renderItem = ({ item, pushDetails }) => (
   />
 );
 
-const keyExtractor = (item: IRestaurant) => item.id + item.name;
+const keyExtractor = (item: any) => item.id + item.name;
 
 const MarketView = React.memo<ViewProps>(({ themedStyle, ...props }) => {
   const pushDetails = useCallback(
