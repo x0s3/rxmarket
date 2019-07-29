@@ -28,6 +28,9 @@ export class Restaurant implements IRestaurant {
   @Column()
   image?: string;
 
+  @Column('simple-array', { array: true, default: () => 'array[]::text[]' })
+  images?: string[];
+
   @Column('timestamp with time zone', { default: () => 'CURRENT_TIMESTAMP' })
   // tslint:disable-next-line: variable-name
   created_at?: Date;

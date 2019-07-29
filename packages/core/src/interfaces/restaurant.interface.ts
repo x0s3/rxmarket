@@ -22,4 +22,5 @@ export interface IRestaurant {
   readonly image?: string;
   readonly roles?: RestaurantRole[];
   readonly categories?: RestaurantCategory[];
+  readonly images?: string[];
 }

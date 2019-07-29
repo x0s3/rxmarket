@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { View } from 'react-native';
 import { Button, Text, ThemeType, withStyles } from 'react-native-ui-kitten';
 import {
+  ImageList,
   NativeImage,
   PriceText,
   ScrollableAvoidKeyboard,
@@ -18,9 +19,14 @@ import { getRestaurantFetched } from '../redux/selectors';
 
 const RestaurantView = React.memo<ViewProps & { id: number }>(
   ({ themedStyle, ...props }) => {
-    const { image, name, description, isFetching, hasError } = useReduxState(
-      getRestaurantFetched
-    );
+    const {
+      images,
+      image,
+      name,
+      description,
+      isFetching,
+      hasError
+    } = useReduxState(getRestaurantFetched);
     const fetching = useMemo(() => !isFetching && !name, [isFetching, name]);
 
     const fetchRestaurantData = useReduxAction(getRestaurant.request);
@@ -47,7 +53,7 @@ const RestaurantView = React.memo<ViewProps & { id: number }>(
               {name}
             </Text>
             <Text style={themedStyle.rentLabel} appearance='hint' category='p2'>
-              Delivery aprox time
+              Delivery approx. time
             </Text>
             <View style={themedStyle.bookContainer}>
               <PriceText
@@ -88,6 +94,12 @@ const RestaurantView = React.memo<ViewProps & { id: number }>(
           >
             Photos
           </Text>
+          <ImageList
+            horizontal={true}
+            contentContainerStyle={themedStyle.photoList}
+            ItemSeparatorComponent={() => <View style={{ margin: 10 }} />}
+            data={images}
+          />
         </View>
       </ScrollableAvoidKeyboard>
     );

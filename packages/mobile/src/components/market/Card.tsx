@@ -17,7 +17,15 @@ interface ComponentProps extends TouchableOpacityProps, IRestaurant {
 export type RestaurantCardProps = ThemedComponentProps & ComponentProps;
 
 const RestaurantCardItem = React.memo<RestaurantCardProps>(
-  ({ themedStyle, onPress, onBucket, description, rate, name, image }) => (
+  ({
+    themedStyle,
+    onPress,
+    onBucket,
+    description,
+    rate = 0,
+    name = '',
+    image = ''
+  }) => (
     <TouchableOpacity onPress={onPress}>
       <NativeImage source={{ uri: image }} style={themedStyle.image} />
       <View style={themedStyle.infoContainer}>

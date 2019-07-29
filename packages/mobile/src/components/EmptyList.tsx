@@ -8,18 +8,22 @@ interface IEmptyList extends TextProps {
 
 export const EmptyList: React.FC<IEmptyList> = ({
   text = 'Empty list :(',
+  style = {},
   ...props
 }) => (
   <Text
     {...props}
-    style={{
-      paddingTop: 50,
-      alignSelf: 'center',
-      justifyContent: 'center',
-      ...textStyle.headline,
-      fontWeight: 'bold',
-      fontSize: 40
-    }}
-    children={'Empty list :('}
+    style={[
+      {
+        paddingTop: 50,
+        alignSelf: 'center',
+        justifyContent: 'center',
+        ...textStyle.headline,
+        fontWeight: 'bold',
+        fontSize: 40
+      },
+      style
+    ]}
+    children={text}
   />
 );
