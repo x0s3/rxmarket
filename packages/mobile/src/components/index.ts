@@ -3,6 +3,7 @@ export * from './EmptyList';
 export * from './Ionicon';
 export * from './market';
 export * from './NativeImage';
+export * from './PriceText';
 export * from './RefreshControl';
 export * from './RootStyleWrapper';
 export * from './ScrollableAvoidKeyboard';
