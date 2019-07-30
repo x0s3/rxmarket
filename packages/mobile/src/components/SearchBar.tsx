@@ -8,7 +8,10 @@ import {
 } from '../hooks/use-navigation';
 import { ValidationInput } from './';
 
-export const SearchComponent = React.memo<{ id: string }>(({ ...props }) => {
+export const SearchComponent = React.memo<{
+  id: string;
+  placeHolderText: string;
+}>(({ ...props }) => {
   const debounceSubject = useRef(new Subject());
 
   useNavigationComponentDidAppear(() => {
@@ -27,5 +30,11 @@ export const SearchComponent = React.memo<{ id: string }>(({ ...props }) => {
 
   const onChange = (item: any) => debounceSubject.current.next(item);
 
-  return <ValidationInput onChangeText={onChange} validator={() => true} />;
+  return (
+    <ValidationInput
+      placeholder={props.placeHolderText}
+      onChangeText={onChange}
+      validator={() => true}
+    />
+  );
 });
