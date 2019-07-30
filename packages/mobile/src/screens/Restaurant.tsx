@@ -7,7 +7,8 @@ import {
   PriceText,
   ScrollableAvoidKeyboard,
   textStyle,
-  ViewProps
+  ViewProps,
+  PropsList
 } from '../components';
 import {
   useNavigationComponentDidAppear,
@@ -20,6 +21,8 @@ import { getRestaurantFetched } from '../redux/selectors';
 const RestaurantView = React.memo<ViewProps & { id: number }>(
   ({ themedStyle, ...props }) => {
     const {
+      roles,
+      categories,
       images,
       image,
       name,
@@ -27,8 +30,10 @@ const RestaurantView = React.memo<ViewProps & { id: number }>(
       isFetching,
       hasError
     } = useReduxState(getRestaurantFetched);
-    const fetching = useMemo(() => !isFetching && !name, [isFetching, name]);
-
+    const fetching = useMemo(() => !name && !hasError && !fetching, [
+      isFetching,
+      name
+    ]);
     const fetchRestaurantData = useReduxAction(getRestaurant.request);
     const cleanOrCancelData = useReduxAction(getRestaurant.cancel);
 
@@ -39,7 +44,15 @@ const RestaurantView = React.memo<ViewProps & { id: number }>(
 
     useNavigationComponentDidDisappear(cleanOrCancelData, props.componentId);
 
-    if (hasError) return <Text>Error fetching data restaurant :(</Text>;
+    if (hasError)
+      return (
+        <Text style={{ alignSelf: 'center' }}>
+          Error fetching data restaurant :(
+        </Text>
+      );
+
+    if (fetching)
+      return <Text style={{ alignSelf: 'center' }}>Fetching Data :)</Text>;
 
     return (
       <ScrollableAvoidKeyboard style={themedStyle.container}>
@@ -75,8 +88,9 @@ const RestaurantView = React.memo<ViewProps & { id: number }>(
           </View>
           <View style={themedStyle.facilitiesContainer}>
             <Text style={themedStyle.sectionLabel} category='s1'>
-              Facilities
+              Properties
             </Text>
+            <PropsList data={[...categories, ...roles]} />
           </View>
         </View>
         <View style={themedStyle.aboutSection}>
