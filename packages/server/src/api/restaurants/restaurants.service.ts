@@ -11,8 +11,13 @@ export class RestaurantsService {
     private readonly restaurantRepository: Repository<Restaurant>
   ) {}
 
-  findAll(): Observable<Restaurant[]> {
-    return from(this.restaurantRepository.find());
+  findAll({ take = 10, skip = 0 }): Observable<Restaurant[]> {
+    return from(
+      this.restaurantRepository.find({
+        take,
+        skip
+      })
+    );
   }
 
   findOneById(id: number): Observable<Restaurant> {

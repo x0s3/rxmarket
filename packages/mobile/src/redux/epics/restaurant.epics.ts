@@ -9,9 +9,14 @@ const getRestaurantsEpic$: RootEpic = (action$, store$, { ajax, baseURL }) =>
     filter(isActionOf(getRestaurants.request)),
     switchMap(_ =>
       from(
-        ajax.getJSON(`${baseURL}/restaurants`, {
-          Authorization: `Bearer ${store$.value.auth.token}`
-        })
+        ajax.getJSON(
+          `${baseURL}/restaurants?take=${
+            store$.value.restaurants.pagination.take
+          }&skip=${store$.value.restaurants.pagination.skip}`,
+          {
+            Authorization: `Bearer ${store$.value.auth.token}`
+          }
+        )
       ).pipe(
         map((r: IRestaurant | any) => getRestaurants.success(r)),
         catchError(

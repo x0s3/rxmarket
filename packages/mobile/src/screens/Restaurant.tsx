@@ -5,10 +5,10 @@ import {
   ImageList,
   NativeImage,
   PriceText,
+  PropsList,
   ScrollableAvoidKeyboard,
   textStyle,
-  ViewProps,
-  PropsList
+  ViewProps
 } from '../components';
 import {
   useNavigationComponentDidAppear,

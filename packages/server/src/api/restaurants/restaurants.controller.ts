@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { from, Observable } from 'rxjs';
 import { Restaurant } from './restaurants.entity';
 import { RestaurantsService } from './restaurants.service';
@@ -13,7 +13,10 @@ export class RestaurantsController {
   }
 
   @Get()
-  findAll(): Observable<Restaurant[]> {
-    return from(this.restaurantsService.findAll());
+  findAll(
+    @Query('take') take: number,
+    @Query('skip') skip: number
+  ): Observable<Restaurant[]> {
+    return from(this.restaurantsService.findAll({ take, skip }));
   }
 }

@@ -10,6 +10,7 @@ export interface IRestaurantsInitialState {
     hasError?: boolean;
   };
   readonly error: boolean;
+  readonly pagination: { take: number; skip: number };
 }
 
 export const restaurantReducer = createReducer<
@@ -19,7 +20,8 @@ export const restaurantReducer = createReducer<
   isFetching: false,
   restaurants: [],
   restaurantFetched: { isFetching: false },
-  error: false
+  error: false,
+  pagination: { take: 10, skip: 0 }
 })
   .handleAction(getRestaurants.request, state => ({
     ...state,
@@ -33,7 +35,8 @@ export const restaurantReducer = createReducer<
   .handleAction(getRestaurants.success, (state, action) => ({
     ...state,
     isFetching: false,
-    restaurants: [...action.payload]
+    restaurants: [...action.payload],
+    pagination: { ...state.pagination, skip: state.pagination.skip + 10 }
   }))
   .handleAction(getRestaurant.success, (state, action) => ({
     ...state,
