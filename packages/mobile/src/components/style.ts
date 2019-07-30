@@ -26,7 +26,7 @@ export const textStyle: { [key: string]: TextStyle } = {
     fontWeight: 'normal'
   },
   button: {
-    // fontFamily: 'opensans-extrabold',
-    // fontWeight: 'normal',
+    fontFamily: 'opensans-extrabold',
+    fontWeight: 'normal'
   }
 };
