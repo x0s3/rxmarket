@@ -11,6 +11,7 @@ export * from './PropsList';
 export * from './RefreshControl';
 export * from './RootStyleWrapper';
 export * from './ScrollableAvoidKeyboard';
+export * from './SearchBar';
 export * from './style';
 export * from './types';
 export * from './ValidationInput';
