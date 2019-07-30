@@ -38,7 +38,7 @@ const RestaurantCardItem = React.memo<RestaurantCardProps>(
             appearance={'hint'}
             category={'c1'}
           >
-            {description}
+            {`${description && description.substring(0, 100)}...`}
           </Text>
         </View>
         <View style={themedStyle.priceContainer}>
