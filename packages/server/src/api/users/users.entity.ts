@@ -32,10 +32,21 @@ export class User {
   @Column()
   phone?: string;
 
+  @Column({ select: false, nullable: true })
+  // tslint:disable-next-line: variable-name
+  credit_card_number?: string;
+
+  @Column({ select: false, nullable: true })
+  // tslint:disable-next-line: variable-name
+  credit_card_expire_date?: string;
+
   @Column('simple-array', { array: true, default: [UserRole.USER] })
   roles?: UserRole[];
 
-  @Column('timestamp with time zone', { default: () => 'CURRENT_TIMESTAMP' })
+  @Column('timestamp with time zone', {
+    select: false,
+    default: () => 'CURRENT_TIMESTAMP'
+  })
   // tslint:disable-next-line: variable-name
   created_at?: Date;
 
