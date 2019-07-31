@@ -10,6 +10,7 @@
   "scripts": {
     "build": "yarn clear && tsc",
     "clear": "rimraf dist",
+    "debug": "react-devtools",
     "start": "react-native start",
     "test": "jest",
     "lint": "tslint -p ."
@@ -46,6 +47,7 @@
     "jest": "^24.8.0",
     "metro-minify-terser": "^0.55.0",
     "metro-react-native-babel-preset": "^0.55.0",
+    "react-devtools": "^3.6.3",
     "react-test-renderer": "16.8.6",
     "rimraf": "^2.6.3"
   },

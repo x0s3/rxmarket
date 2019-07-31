@@ -10,8 +10,9 @@
     "packages/*"
   ],
   "scripts": {
-    "debug:android": "lerna exec --scope mobile react-native run-android --stream",
-    "debug:ios": "lerna exec --scope mobile react-native run-ios --stream",
+    "android": "lerna exec --scope mobile react-native run-android --stream",
+    "ios": "lerna exec --scope mobile react-native run-ios --stream",
+    "debug:mobile":"lerna run debug --scope mobile --stream",
     "dev:mobile": "lerna run start --scope mobile --stream",
     "dev:server": "lerna exec --scope server -- yarn start:dev --stream",
     "dev:server-watch": "lerna exec --scope server -- yarn watch --stream",
