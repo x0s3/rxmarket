@@ -9,6 +9,7 @@ export * from './PaymentCard';
 export * from './PriceText';
 export * from './PropsList';
 export * from './RefreshControl';
+export * from './RestaurantList';
 export * from './RootStyleWrapper';
 export * from './ScrollableAvoidKeyboard';
 export * from './SearchBar';

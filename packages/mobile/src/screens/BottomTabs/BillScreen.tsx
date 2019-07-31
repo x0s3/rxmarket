@@ -5,7 +5,9 @@ import { ScrollableAvoidKeyboard, ViewProps } from '../../components';
 const BillsView = React.memo<ViewProps>(({ themedStyle, ...props }) => {
   return (
     <ScrollableAvoidKeyboard style={themedStyle.container}>
-      <Text>Your Bills</Text>
+      <Text style={{ alignSelf: 'center', fontSize: 50, paddingTop: 50 }}>
+        Work In Progress
+      </Text>
     </ScrollableAvoidKeyboard>
   );
 });

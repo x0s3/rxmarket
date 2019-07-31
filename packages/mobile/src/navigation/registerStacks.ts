@@ -29,7 +29,8 @@ export function homeStack(): void {
     { name: 'md-home' },
     { name: 'md-search' },
     { name: 'md-list-box' },
-    { name: 'md-person' }
+    { name: 'md-person' },
+    { name: 'md-options' }
   ]).then(icons =>
     Navigation.setRoot({
       root: {
@@ -65,7 +66,16 @@ export function homeStack(): void {
                     component: {
                       name: SEARCH_SCREEN,
                       options: mergeProps(sharedOptions, {
-                        topBar: { title: { text: 'Search' } },
+                        topBar: {
+                          title: { text: 'Search' },
+                          rightButtons: [
+                            {
+                              color: '#F7F9FC',
+                              icon: icons[4],
+                              id: 'SEARCH_FILTERS_ICON'
+                            }
+                          ]
+                        },
                         bottomTab: { icon: icons[1] }
                       })
                     }

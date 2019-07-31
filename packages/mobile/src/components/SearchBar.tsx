@@ -1,5 +1,5 @@
 import { StringValidator as stringValidator } from 'core/src/validators';
-import React, { useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { Subject } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import {
@@ -8,33 +8,44 @@ import {
 } from '../hooks/use-navigation';
 import { ValidationInput } from './';
 
-export const SearchComponent = React.memo<{
+interface ISearch {
   id: string;
   placeHolderText: string;
-}>(({ ...props }) => {
-  const debounceSubject = useRef(new Subject());
+  action: (searchQuery: any) => void;
+  debounce?: number;
+}
 
-  useNavigationComponentDidAppear(() => {
-    debounceSubject.current
-      .pipe(
-        map((text: any) => stringValidator(text) && text),
-        debounceTime(500)
-      )
-      .subscribe(console.log);
-  }, props.id);
+export const SearchComponent = React.memo<ISearch>(
+  ({ id, placeHolderText, action, debounce = 500, ...props }) => {
+    const debounceSubject = useRef(new Subject());
 
-  useNavigationComponentDidDisappear(() => {
-    debounceSubject.current.unsubscribe();
-    debounceSubject.current = new Subject();
-  }, props.id);
+    useNavigationComponentDidAppear(() => {
+      debounceSubject.current
+        .pipe(
+          map(({ searchQuery }: any) => ({ searchQuery })),
+          debounceTime(debounce)
+        )
+        .subscribe(action);
+    }, id);
 
-  const onChange = (item: any) => debounceSubject.current.next(item);
+    useNavigationComponentDidDisappear(() => {
+      debounceSubject.current.unsubscribe();
+      debounceSubject.current = new Subject();
+    }, id);
 
-  return (
-    <ValidationInput
-      placeholder={props.placeHolderText}
-      onChangeText={onChange}
-      validator={() => true}
-    />
-  );
-});
+    const onChange = useCallback(
+      (searchQuery: string) =>
+        stringValidator(searchQuery) &&
+        debounceSubject.current.next({ searchQuery }),
+      []
+    );
+
+    return (
+      <ValidationInput
+        placeholder={placeHolderText}
+        onChangeText={onChange}
+        validator={() => true}
+      />
+    );
+  }
+);

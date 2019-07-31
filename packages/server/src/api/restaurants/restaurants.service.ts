@@ -23,4 +23,14 @@ export class RestaurantsService {
   findOneById(id: number): Observable<Restaurant> {
     return from(this.restaurantRepository.findOneOrFail({ id }));
   }
+
+  findByQuery(query: string): Observable<Restaurant[]> {
+    return from(
+      this.restaurantRepository.find({
+        where: {
+          name: query
+        }
+      })
+    );
+  }
 }
