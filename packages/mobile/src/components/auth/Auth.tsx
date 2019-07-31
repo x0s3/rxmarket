@@ -1,6 +1,6 @@
 import { NameValidator, PasswordValidator } from 'core/dist/validators';
 import React from 'react';
-import { View, ViewProps } from 'react-native';
+import { Alert, View, ViewProps } from 'react-native';
 import {
   Button,
   ThemedComponentProps,
@@ -50,7 +50,7 @@ const AuthFormComponent = React.memo<SignInFormProps>(
               textStyle={themedStyle.forgotPasswordText}
               appearance='ghost'
               activeOpacity={0.75}
-              onPress={() => alert('')}
+              onPress={() => Alert.alert('WIP', 'WIP')}
             >
               Forgot your password?
             </Button>

@@ -5,16 +5,16 @@ export default class ErrorBoundary extends Component<
   React.ReactNode,
   { hasError: boolean }
 > {
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: any) {
     return { hasError: true };
   }
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = { hasError: false };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: any, info: any) {
     console.log(error, info);
   }
 

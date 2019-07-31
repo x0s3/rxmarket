@@ -1,5 +1,5 @@
 export const mergeProps = (...sources: object[]) => {
-  let acc = {};
+  let acc: any = {};
   for (const source of sources) {
     if (source instanceof Array) {
       if (!(acc instanceof Array)) {

@@ -1,6 +1,6 @@
 import { IRestaurant } from 'core/src/interfaces';
 import React, { useCallback, useEffect } from 'react';
-import { FlatList } from 'react-native';
+import { Alert, FlatList } from 'react-native';
 import { ThemeType, withStyles } from 'react-native-ui-kitten';
 import { EmptyList, RestaurantCard, ViewProps } from '../../../components';
 import { useNavigationScreen } from '../../../hooks/use-navigation';
@@ -12,10 +12,16 @@ import {
   getRestaurants
 } from '../../../redux/selectors';
 
-const renderItem = ({ item, pushDetails }) => (
+const renderItem = ({
+  item,
+  pushDetails
+}: {
+  item: IRestaurant | any;
+  pushDetails: (item: number, name: string) => void;
+}) => (
   <RestaurantCard
     onPress={() => pushDetails(item.id, item.name)}
-    onBucket={() => alert(`${item.name} has ${item.rate} stars`)}
+    onBucket={() => Alert.alert(`${item.name}`, `Has ${item.rate} stars`)}
     {...item}
   />
 );

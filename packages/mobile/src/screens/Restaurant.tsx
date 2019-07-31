@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 import { Button, Text, ThemeType, withStyles } from 'react-native-ui-kitten';
 import {
   ImageList,
@@ -30,7 +30,7 @@ const RestaurantView = React.memo<ViewProps & { id: number }>(
       isFetching,
       hasError
     } = useReduxState(getRestaurantFetched);
-    const fetching = useMemo(() => !name && !hasError && !fetching, [
+    const fetching: boolean = useMemo(() => !name && !hasError && !fetching, [
       isFetching,
       name
     ]);
@@ -80,7 +80,7 @@ const RestaurantView = React.memo<ViewProps & { id: number }>(
               <Button
                 style={themedStyle.bookButton}
                 textStyle={textStyle.button}
-                onPress={() => alert('hola manola')}
+                onPress={() => Alert.alert('Title', 'Text :)')}
               >
                 WEB
               </Button>

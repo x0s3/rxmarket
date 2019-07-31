@@ -1,18 +1,31 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./src",
-    "rootDir": "src",
-    "outDir": "dist",
-    "resolveJsonModule": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "jsx": "preserve",
-    "noEmit": false,
-    "allowJs": false,
-    "declaration": true,
-    "composite": true,
-    "typeRoots": ["../../node_modules/@types"]
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "es2017",
+    "typeRoots": ["../../node_modules/@types"],
+    "types": [
+      "react",
+      "react-native",
+      "react-redux",
+      "react-native-vector-icons",
+      "jest",
+      "react-test-renderer"
+    ]
   },
-  "exclude": ["node_modules"],
+  "exclude": [
+    "../../node_modules",
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ],
   "include": ["src/**/*"]
 }

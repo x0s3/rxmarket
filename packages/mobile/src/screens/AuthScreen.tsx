@@ -1,6 +1,6 @@
 import { LoginCredentials } from 'core/src/interfaces';
 import React, { useCallback, useState } from 'react';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 import { Button, Text, ThemeType, withStyles } from 'react-native-ui-kitten';
 import { useDispatch as useReduxAction } from 'react-redux';
 import {
@@ -35,7 +35,7 @@ const AuthView = React.memo<ViewProps>(({ themedStyle, ...props }) => {
       </View>
       <AuthForm
         style={themedStyle.formContainer}
-        onForgotPasswordPress={() => alert('WIP')}
+        onForgotPasswordPress={() => Alert.alert('WIP','WIP')}
         onDataChange={setDataLogin}
       />
       <Button
