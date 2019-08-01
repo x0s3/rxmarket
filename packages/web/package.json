@@ -1,0 +1,41 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "description": "Manager web app rxmarket",
+  "keywords": [
+    "SSR",
+    "Typescript",
+    "React",
+    "GraphQL"
+  ],
+  "author": "x0s3 <x0s3.prog@gmail.com>",
+  "homepage": "https://github.com/x0s3/rxmarket#readme",
+  "license": "ISC",
+  "main": "",
+  "directories": {},
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x0s3/rxmarket.git"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "bugs": {
+    "url": "https://github.com/x0s3/rxmarket/issues"
+  },
+  "dependencies": {
+    "next": "^9.0.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.8.5",
+    "typescript": "^3.5.3"
+  }
+}
