@@ -22,6 +22,8 @@
     "rimraf": "^2.6.3"
   },
   "dependencies": {
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
     "tsconfig-paths": "^3.8.0"
   }
 }

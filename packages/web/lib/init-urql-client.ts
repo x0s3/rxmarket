@@ -19,7 +19,7 @@ export default function initUrqlClient(initialState?: any) {
     ssrCache = ssrExchange({ initialState });
 
     urqlClient = createClient({
-      url: 'https://rickandmortyapi.com/graphql/',
+      url: 'http://localhost:3000/graphql',
       // Active suspense mode on the server-side
       suspense: isServer,
       exchanges: [dedupExchange, cacheExchange, ssrCache, fetchExchange]
