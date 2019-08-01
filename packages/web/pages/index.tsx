@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Home() {
+function Home(): React.ReactElement {
   const [counter, setCounter] = useState<number>(0);
 
   return (
