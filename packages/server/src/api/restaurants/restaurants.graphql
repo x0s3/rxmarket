@@ -1,0 +1,17 @@
+type Query {
+  getRestaurants: [Restaurant]!
+}
+
+type Restaurant {
+  id: Int!
+  name: String!
+  phone: String
+  email: String
+  rate: Int!
+  description: String
+  image: String
+  images: [String]
+  created_at: String
+  roles: [String]
+  categories: [String]
+}
