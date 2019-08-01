@@ -29,6 +29,8 @@
     "url": "https://github.com/x0s3/rxmarket/issues"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^3.20.7",
     "next": "^9.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
@@ -36,6 +38,8 @@
   "devDependencies": {
     "@types/react": "^16.8.24",
     "@types/react-dom": "^16.8.5",
+    "babel-plugin-import": "^1.12.0",
+    "null-loader": "^3.0.0",
     "typescript": "^3.5.3"
   }
 }
