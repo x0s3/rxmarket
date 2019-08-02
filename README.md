@@ -81,6 +81,7 @@ After having the commit well commented for deploying the changes to the repo jus
 # IN PROGRESS
 
 - [ ] Client mobile apps
+- [ ] Manager web app
 - [ ] Server PART: I
 
 # TODOS
