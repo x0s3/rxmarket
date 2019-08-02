@@ -75,6 +75,8 @@ After having the commit well commented for deploying the changes to the repo jus
 - [RxJS](https://github.com/ReactiveX/RxJS)
 - [NestJS](https://nestjs.com)
 - [TypeORM](https://github.com/typeorm/typeorm)
+- [NextJS](https://github.com/zeit/next.js)
+- [UrQL](https://github.com/FormidableLabs/urql)
 
 # IN PROGRESS
 
