@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Navigation, Options } from 'react-native-navigation';
 
-export type ModalActions = 'show' | 'dimiss' | 'dismissAll';
+export type ModalActions = 'show' | 'dismiss' | 'dismissAll';
 
 export type ScreenActions = 'push' | 'pop' | 'popTo' | 'popToRoot';
 
@@ -141,7 +141,7 @@ function useNavigationModal({
         component: { name, options }
       });
       break;
-    case 'dimiss':
+    case 'dismiss':
       Navigation.dismissModal(componentId, { ...options });
       break;
     case 'dismissAll':

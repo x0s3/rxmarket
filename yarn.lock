@@ -11742,10 +11742,10 @@ react-native-keyboard-aware-scroll-view@^0.8.0:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
 
-react-native-navigation@^3.0.0-alpha.8:
-  version "3.0.0-alpha.8"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-3.0.0-alpha.8.tgz#614e10ba80692a5641bae61a1c6f51e0379f22cc"
-  integrity sha512-PB1ePndxM8LZPlfcPOlpfPXLFQQnH4Qk1af6KwIp1M0knjzfy7EhGGyRkVzqFokA+QWeChsn8QPpJufEXXHHoA==
+react-native-navigation@^3.0.0-alpha.10:
+  version "3.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-3.0.0-alpha.10.tgz#bbc3c963b4f8a76d904e3fc60e4514fa4631cbdb"
+  integrity sha512-/4MSci6k2CYFNj/4NNPu7Vnv+jXCVf69n5RJZ/lolSMJEnpfsq7auCKXTTQIS9nYLfe5vtKBvkQ+FPhMqkT1oA==
   dependencies:
     hoist-non-react-statics "3.x.x"
     lodash "4.17.x"

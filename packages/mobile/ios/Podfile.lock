@@ -105,7 +105,7 @@ PODS:
   - React-RCTWebSocket (0.60.4):
     - React-Core (= 0.60.4)
     - React-fishhook (= 0.60.4)
-  - ReactNativeNavigation (3.0.0-alpha.8):
+  - ReactNativeNavigation (3.0.0-alpha.10):
     - React
   - RNFastImage (7.0.2):
     - React
@@ -113,9 +113,9 @@ PODS:
     - SDWebImageWebPCoder (~> 0.2.3)
   - RNVectorIcons (6.6.0):
     - React
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
   - SDWebImageWebPCoder (0.2.3):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.0)
@@ -231,10 +231,10 @@ SPEC CHECKSUMS:
   React-RCTText: e0f224898b13af9aa036ea7cb3d438daa68c1044
   React-RCTVibration: 0bea40cd51bd089bd591a8f74c86e91fdf2666c5
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
-  ReactNativeNavigation: ba06279419c6c375e0fa04d17fbc3ab976251d42
+  ReactNativeNavigation: 37ce29ce3b6741e2505868c06c14aec06406b5aa
   RNFastImage: 9b0c22643872bb7494c8d87bbbb66cc4c0d9e7a2
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SDWebImageWebPCoder: 7568737603c50f6237850afedd7e9e28e5917e6b
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 

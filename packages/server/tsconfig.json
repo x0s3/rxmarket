@@ -13,6 +13,7 @@
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
+    "strictNullChecks": true,
     "pretty": true,
     "strict": true,
     "target": "es2017",

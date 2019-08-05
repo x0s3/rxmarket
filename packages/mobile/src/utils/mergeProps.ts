@@ -6,12 +6,12 @@ export const mergeProps = (...sources: object[]) => {
         acc = [];
       }
       acc = [{ ...acc }, ...source];
-    } else if (source instanceof Object) {
+    } else {
       for (let [key, value] of Object.entries(source)) {
         if (value instanceof Object && key in acc) {
           value = mergeProps(acc[key], value);
         }
-        acc = { ...acc, [key]: value };
+        acc = {...acc, [key]: value};
       }
     }
   }

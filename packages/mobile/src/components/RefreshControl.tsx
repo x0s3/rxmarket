@@ -1,7 +1,7 @@
 import React from 'react';
-import { RefreshControl, RefreshControlProperties } from 'react-native';
+import { RefreshControl, RefreshControlProps } from 'react-native';
 
-export const CustomRefresh = React.memo<RefreshControlProperties>(
+export const CustomRefresh = React.memo<RefreshControlProps>(
   ({ onRefresh, refreshing, ...props }) => (
     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} {...props} />
   )

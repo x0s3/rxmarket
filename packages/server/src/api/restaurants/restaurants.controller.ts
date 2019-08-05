@@ -21,7 +21,7 @@ export class RestaurantsController {
   }
 
   @Get('/search')
-  fidnByQuery(@Query('query') query: string): Observable<Restaurant[]> {
+  findByQuery(@Query('query') query: string): Observable<Restaurant[]> {
     return from(this.restaurantsService.findByQuery(query));
   }
 }
