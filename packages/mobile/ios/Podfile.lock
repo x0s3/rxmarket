@@ -105,7 +105,7 @@ PODS:
   - React-RCTWebSocket (0.60.4):
     - React-Core (= 0.60.4)
     - React-fishhook (= 0.60.4)
-  - ReactNativeNavigation (3.0.0-alpha.10):
+  - ReactNativeNavigation (3.0.0-alpha.7-snapshot.434):
     - React
   - RNFastImage (7.0.2):
     - React
@@ -231,7 +231,7 @@ SPEC CHECKSUMS:
   React-RCTText: e0f224898b13af9aa036ea7cb3d438daa68c1044
   React-RCTVibration: 0bea40cd51bd089bd591a8f74c86e91fdf2666c5
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
-  ReactNativeNavigation: 37ce29ce3b6741e2505868c06c14aec06406b5aa
+  ReactNativeNavigation: e18d1a5c19b98b66c0f9c80d767922f8e1a404fa
   RNFastImage: 9b0c22643872bb7494c8d87bbbb66cc4c0d9e7a2
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f

@@ -13,13 +13,11 @@ const routing: { [key: string]: string } = {
 };
 
 export const CustomHeader = React.memo(() => {
-  const [path, setPath] = useState<string>(
-    typeof window !== undefined ? window.location.pathname : ''
-  );
+  const [path, setPath] = useState<string>('/');
   const changePath = useCallback(newPath => setPath(newPath.key), []);
 
   return (
-    <Header style={{ backgroundColor: '#FFFFFF' }}>
+    <Header style={{ backgroundColor: '#FFFFFF', textAlign: 'center' }}>
       <Menu
         selectedKeys={[path]}
         style={{ lineHeight: '64px' }}
