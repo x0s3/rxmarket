@@ -1,20 +1,20 @@
 import App, { AppProps, Container } from 'next/app';
-import { Provider } from 'urql';
-import withUrqlClient from '../lib/with-urql-client';
+import { ApolloProvider } from 'react-apollo';
+import withApolloClient from '../lib/with-apollo-client';
 
-type IApp = AppProps & { urqlClient: any };
+type IApp = AppProps & { apolloClient: any };
 
 class MyApp extends App<IApp> {
   render() {
-    const { Component, pageProps, urqlClient } = this.props;
+    const { Component, pageProps, apolloClient } = this.props;
     return (
       <Container>
-        <Provider value={urqlClient}>
+        <ApolloProvider client={apolloClient}>
           <Component {...pageProps} />
-        </Provider>
+        </ApolloProvider>
       </Container>
     );
   }
 }
 
-export default withUrqlClient(MyApp);
+export default withApolloClient(MyApp);
