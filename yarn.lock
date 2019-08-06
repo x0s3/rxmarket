@@ -13303,7 +13303,7 @@ styled-components@^4.3.2:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
-styled-jsx@3.2.1:
+styled-jsx@3.2.1, styled-jsx@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/styled-jsx/-/styled-jsx-3.2.1.tgz#452051fe50df5e9c7c7f3dd20fa46c3060ac65b0"
   integrity sha512-gM/WOrWYRpWReivzQqetEGohUc/TJSvUoZ5T/UJxJZIsVIPlRQLnp7R8Oue4q49sI08EBRQjQl2oBL3sfdrw2g==

@@ -7,7 +7,7 @@ export default (App: any) => {
   return class Apollo extends React.Component {
     static displayName = 'withApollo(App)';
 
-    static async getInitialProps(ctx) {
+    static async getInitialProps(ctx: any) {
       const { AppTree } = ctx;
 
       let appProps = {};
@@ -47,7 +47,7 @@ export default (App: any) => {
 
     apolloClient: any;
 
-    constructor(props) {
+    constructor(props: any) {
       super(props);
       this.apolloClient = initApollo(props.apolloState);
     }
