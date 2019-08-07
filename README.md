@@ -76,7 +76,7 @@ After having the commit well commented for deploying the changes to the repo jus
 - [NestJS](https://nestjs.com)
 - [TypeORM](https://github.com/typeorm/typeorm)
 - [NextJS](https://github.com/zeit/next.js)
-- [UrQL](https://github.com/FormidableLabs/urql)
+- [React-Apollo](https://github.com/apollographql/react-apollo)
 
 # IN PROGRESS
 
