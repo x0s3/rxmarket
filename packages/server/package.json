@@ -25,6 +25,7 @@
     "lint": "tslint -p .",
     "build": "yarn clear && tsc",
     "clear": "rimraf dist",
+    "start:db":"bash start_db.sh",
     "start:dev": "ts-node ./src/index.ts",
     "start:prod": "node -r ./tsconfig-paths.js dist/index.js",
     "watch": "nodemon --watch src --ext ts --ignore '*.spec.ts' --exec yarn start:dev",

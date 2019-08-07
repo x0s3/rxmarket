@@ -10,6 +10,7 @@
     "packages/*"
   ],
   "scripts": {
+    "db":"lerna run start:db --scope server --stream",
     "android": "lerna exec --scope customer react-native run-android --stream",
     "ios": "lerna exec --scope customer react-native run-ios --stream",
     "debug:customer":"lerna run debug --scope customer --stream",
