@@ -16,10 +16,10 @@ lerna add [--dev] package-name [--scope package name ex: components]
 
 ## Starters
 
-#### Start mobile dev server
+#### Start customer dev server
 
 ```sh
- yarn dev:mobile
+ yarn dev:customer
 ```
 
 #### Start dev server
@@ -43,11 +43,11 @@ lerna add [--dev] package-name [--scope package name ex: components]
 #### Build android apk
 
 ```sh
- yarn build:mobile:android
+ yarn build:customer:android
 ```
 
 ```sh
- yarn build:mobile:ios
+ yarn build:customer:ios
 ```
 
 #### Build server
@@ -80,13 +80,13 @@ After having the commit well commented for deploying the changes to the repo jus
 
 # IN PROGRESS
 
-- [ ] Client mobile apps
+- [ ] Client customer apps
 - [ ] Manager web app
 - [ ] Server PART: I
 
 # TODOS
 
-- [ ] Add FastLane for mobile release apps
+- [ ] Add FastLane for mobile (customer / rider) release apps
 - [ ] Rider App
 - [ ] Manager App / WebApp
 - [ ] Server PART: II
