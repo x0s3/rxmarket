@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
-import { AuthModule, RestaurantsModule, UsersModule } from './api';
+import { RestaurantsModule, UsersModule } from './api';
 import { Config } from './config';
 
 @Module({
@@ -22,7 +22,7 @@ import { Config } from './config';
       playground: true,
       debug: true
     }),
-    AuthModule,
+    // AuthModule,
     UsersModule,
     RestaurantsModule
   ]

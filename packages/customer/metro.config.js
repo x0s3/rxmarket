@@ -9,7 +9,8 @@ const path = require('path');
 module.exports = {
   watchFolders: [
     // To allow finding files outside mobile
-    path.resolve(__dirname, '../..')
+    path.resolve(__dirname, '../core'),
+    path.resolve(__dirname, '../../node_modules'),
   ],
   transformer: {
     minifierPath: 'metro-minify-terser',
