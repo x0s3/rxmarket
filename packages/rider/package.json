@@ -1,0 +1,38 @@
+{
+  "name": "rider",
+  "version": "0.0.1",
+  "private": false,
+  "author": {
+    "name": "x0s3",
+    "email": "x0s3.prog@gmail.com"
+  },
+  "homepage": "https://github.com/x0s3/rxmarket",
+  "scripts": {
+    "debug": "react-devtools",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "tslint -p ."
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-native": "0.60.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@types/jest": "^24.0.17",
+    "@types/react": "^16.8.24",
+    "@types/react-native": "^0.60.3",
+    "@types/react-test-renderer": "^16.8.3",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.1.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.55.0",
+    "react-devtools": "^3.6.3",
+    "react-test-renderer": "16.8.6"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

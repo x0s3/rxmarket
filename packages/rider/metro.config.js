@@ -10,7 +10,7 @@ module.exports = {
   watchFolders: [
     // To allow finding files outside customer
     path.resolve(__dirname, '../core'),
-    path.resolve(__dirname, '../../node_modules'),
+    path.resolve(__dirname, '../../node_modules')
   ],
   transformer: {
     minifierPath: 'metro-minify-terser',
