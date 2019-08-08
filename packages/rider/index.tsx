@@ -1,9 +1,11 @@
-import { YellowBox } from 'react-native';
+import { I18nManager, UIManager } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import { initialStack, registerScreens } from './src/navigation';
 
-// ui-kitten still uses this method :(
-YellowBox.ignoreWarnings(['Warning: componentWillReceiveProps is deprecated']);
+if (UIManager.setLayoutAnimationEnabledExperimental)
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+
+I18nManager.allowRTL(true);
 
 Navigation.events().registerAppLaunchedListener(() => {
   registerScreens();

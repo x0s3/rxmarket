@@ -1,0 +1,98 @@
+import { useQuery } from '@apollo/react-hooks';
+import { GET_CHARACTERS } from 'core/src/graphql/querys';
+import React from 'react';
+import {
+  Alert,
+  FlatList,
+  Image,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity
+} from 'react-native';
+import { Colors, Constants, Text, View } from 'react-native-ui-lib';
+
+const GUTTER_SIZE = 24;
+const NUMBER_OF_COLUMNS = 2;
+
+export const Home = React.memo(() => {
+  const { data, loading } = useQuery(GET_CHARACTERS);
+
+  return (
+    <View useSafeArea flex>
+      <ScrollView>
+        <View paddingL-24>
+          <View row spread bottom paddingR-24 style={styles.separator}>
+            <Text text20 style={{ lineHeight: 70 }}>
+              {'Rick & Morty'}
+            </Text>
+            <Text text70 red20 marginB-10>
+              Edit
+            </Text>
+          </View>
+        </View>
+        <View paddingL-24>
+          <FlatList
+            data={['Rick', 'Morty']}
+            keyExtractor={item => item}
+            renderItem={ListItem}
+          />
+        </View>
+        <View paddingH-24 marginT-30>
+          <Text text40>Characters</Text>
+          <View marginT-20>
+            {loading && <Text>Loading data :)</Text>}
+            {!loading && (
+              <FlatList
+                horizontal={false}
+                numColumns={NUMBER_OF_COLUMNS}
+                keyExtractor={item => item.name}
+                data={data.characters.results}
+                renderItem={GridListItem}
+              />
+            )}
+          </View>
+        </View>
+      </ScrollView>
+    </View>
+  );
+});
+
+const ListItem = ({ item }: any) => {
+  return (
+    <TouchableOpacity onPress={() => Alert.alert(item)}>
+      <View height={60} centerV style={[styles.separator]}>
+        <Text text60 red20>
+          {item}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+const GridListItem = ({ item, index }: any) => {
+  const itemSize =
+    (Constants.screenWidth - GUTTER_SIZE * (NUMBER_OF_COLUMNS + 1)) /
+    NUMBER_OF_COLUMNS;
+  return (
+    <View flex marginL-24={index % NUMBER_OF_COLUMNS !== 0} marginB-24>
+      <View height={itemSize} bg-dark80>
+        <Image style={{ flex: 1 }} source={{ uri: item.image }} />
+      </View>
+      <View paddingT-2>
+        <Text text70 dark20 numberOfLines={1}>
+          {item.name}
+        </Text>
+        <Text text80 dark40>
+          {item.type}
+        </Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  separator: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: Colors.dark60
+  }
+});

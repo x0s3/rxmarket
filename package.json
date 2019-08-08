@@ -11,11 +11,14 @@
   ],
   "scripts": {
     "db":"lerna run start:db --scope server --stream",
-    "android": "lerna exec --scope customer react-native run-android --stream",
-    "ios": "lerna exec --scope customer react-native run-ios --stream",
+    "android:customer": "lerna exec --scope customer react-native run-android --stream",
+    "android:rider": "lerna exec --scope rider react-native run-android --stream",
+    "ios:customer": "lerna exec --scope customer react-native run-ios --stream",
+    "ios:rider": "lerna exec --scope rider react-native run-ios --stream",
     "debug:customer":"lerna run debug --scope customer --stream",
     "dev:web":"lerna run dev --scope web --stream",
     "dev:customer": "lerna run start --scope customer --stream",
+    "dev:rider": "lerna run start --scope rider --stream",
     "dev:server": "lerna exec --scope server -- yarn start:dev --stream",
     "dev:server-watch": "lerna exec --scope server -- yarn watch --stream",
     "lint:customer": "lerna run lint --scope customer --stream",
@@ -26,7 +29,8 @@
     "build:customer": "lerna run build --scope customer --stream",
     "build:core": "lerna run build --scope core --stream",
     "prod:server": "lerna run start:prod --scope server --stream",
-    "open:ios": "open packages/customer/ios/rxmarket.xcworkspace/",
+    "open:ios:customer": "open packages/customer/ios/rxmarket.xcworkspace/",
+    "open:ios:rider": "open packages/rider/ios/rider.xcworkspace/",
     "push": "lerna version"
   },
   "devDependencies": {

@@ -3,6 +3,8 @@ require_relative '../../../node_modules/@react-native-community/cli-platform-ios
 
 target 'rider' do
   # Pods for rider
+  pod 'ReactNativeNavigation', :path => '../../../node_modules/react-native-navigation'
+  pod 'RNVectorIcons', :path => '../../../node_modules/react-native-vector-icons'
   pod 'React', :path => '../../../node_modules/react-native/'
   pod 'React-Core', :path => '../../../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../../../node_modules/react-native/React'

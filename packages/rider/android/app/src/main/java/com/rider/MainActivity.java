@@ -1,15 +1,29 @@
 package com.rider;
 
-import com.facebook.react.ReactActivity;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.os.Build;
+import android.view.Gravity;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-public class MainActivity extends ReactActivity {
+import com.reactnativenavigation.NavigationActivity;
 
-    /**
-     * Returns the name of the main component registered from JavaScript.
-     * This is used to schedule rendering of the component.
-     */
+public class MainActivity extends NavigationActivity {
     @Override
-    protected String getMainComponentName() {
-        return "rider";
+    protected void addDefaultSplashLayout() {
+        LinearLayout linearLayout = new LinearLayout(this);
+        linearLayout.setBackgroundColor(Color.parseColor("#151A30"));
+        linearLayout.setGravity(Gravity.CENTER);
+
+        TextView text = new TextView(this);
+        text.setText(R.string.app_name);
+        text.setGravity(Gravity.CENTER);
+        text.setTextColor(Color.parseColor("#F7F9FC"));
+        text.setTextSize(50);
+        text.setTypeface(null, Typeface.BOLD);
+        linearLayout.addView(text);
+
+        setContentView(linearLayout);
     }
 }
