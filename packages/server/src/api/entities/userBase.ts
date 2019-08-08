@@ -21,8 +21,8 @@ export class User {
   @Column()
   phone?: string;
 
-  @Column('simple-array', { array: true, default: [UserRole.USER] })
-  roles?: UserRole[];
+  @Column('enum', { enum: UserRole, default: UserRole.USER })
+  roles?: UserRole;
 
   @Column('timestamp with time zone', {
     select: false,

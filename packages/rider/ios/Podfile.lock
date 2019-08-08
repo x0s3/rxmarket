@@ -81,7 +81,7 @@ PODS:
   - React-RCTWebSocket (0.60.4):
     - React-Core (= 0.60.4)
     - React-fishhook (= 0.60.4)
-  - ReactNativeNavigation (3.0.0-alpha.7-snapshot.434):
+  - ReactNativeNavigation (3.0.0-alpha.11):
     - React
   - RNVectorIcons (6.6.0):
     - React
@@ -190,7 +190,7 @@ SPEC CHECKSUMS:
   React-RCTText: e0f224898b13af9aa036ea7cb3d438daa68c1044
   React-RCTVibration: 0bea40cd51bd089bd591a8f74c86e91fdf2666c5
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
-  ReactNativeNavigation: e18d1a5c19b98b66c0f9c80d767922f8e1a404fa
+  ReactNativeNavigation: 55b1823ed258eb9f704a6699e531fa1e8d808b04
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 

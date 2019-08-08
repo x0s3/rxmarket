@@ -11,7 +11,7 @@
     "build": "yarn clear && tsc",
     "clear": "rimraf dist",
     "debug": "react-devtools",
-    "start": "react-native start",
+    "start": "react-native start --port 8088",
     "test": "jest",
     "lint": "tslint -p ."
   },

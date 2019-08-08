@@ -24,11 +24,11 @@ export class RestaurantsService {
     return from(this.restaurantRepository.findOneOrFail({ id }));
   }
 
-  findByQuery(query: string): Observable<Restaurant[]> {
+  findByQuery(name: string): Observable<Restaurant[]> {
     return from(
       this.restaurantRepository.find({
         where: {
-          name: query
+          name
         }
       })
     );

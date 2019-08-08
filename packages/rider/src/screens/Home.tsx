@@ -10,21 +10,23 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { Colors, Constants, Text, View } from 'react-native-ui-lib';
+import { useNavigationDrawer } from '../hooks/use-navigation';
 
 const GUTTER_SIZE = 24;
 const NUMBER_OF_COLUMNS = 2;
 
-export const Home = React.memo(() => {
+type THome = React.FC & { componentId: string };
+
+export const Home = React.memo<THome>(({ ...props }) => {
   const { data, loading } = useQuery(GET_CHARACTERS);
+  useNavigationDrawer(props.componentId);
 
   return (
     <View useSafeArea flex>
       <ScrollView>
         <View paddingL-24>
           <View row spread bottom paddingR-24 style={styles.separator}>
-            <Text text20 style={{ lineHeight: 70 }}>
-              {'Rick & Morty'}
-            </Text>
+            <Text text20>{'Rick & Morty'}</Text>
             <Text text70 red20 marginB-10>
               Edit
             </Text>
@@ -42,7 +44,7 @@ export const Home = React.memo(() => {
           <View marginT-20>
             {loading && <Text>Loading data :)</Text>}
             {!loading && (
-              <FlatList
+              <FlatList<any>
                 horizontal={false}
                 numColumns={NUMBER_OF_COLUMNS}
                 keyExtractor={item => item.name}

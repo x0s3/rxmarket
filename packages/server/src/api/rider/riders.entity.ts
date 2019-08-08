@@ -4,7 +4,7 @@ import { User } from '../entities/userBase';
 
 @Entity('rider')
 export class Rider extends User {
-  @Column('string')
+  @Column({ type: 'enum', enum: VehicleType, default: VehicleType.BICYCLE })
   // tslint:disable-next-line: variable-name
   type_vehicle?: VehicleType;
 

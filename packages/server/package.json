@@ -26,7 +26,7 @@
     "build": "yarn clear && tsc",
     "clear": "rimraf dist",
     "start:db": "bash start_db.sh",
-    "start:dev": "yarn start:db && ts-node ./src/index.ts",
+    "start:dev": "yarn ts-node ./src/index.ts",
     "start:prod": "yarn start:db node -r ./tsconfig-paths.js dist/index.js",
     "watch": "nodemon --watch src --ext ts --ignore '*.spec.ts' --exec yarn start:dev",
     "test": "jest --verbose"

@@ -15,13 +15,13 @@ export class RestaurantsController {
     return from(this.restaurantsService.findAll({ take, skip }));
   }
 
-  @Get('/:id')
-  findOne(@Param('id') id: number): Observable<Restaurant> {
-    return from(this.restaurantsService.findOneById(id));
-  }
-
   @Get('/search')
   findByQuery(@Query('query') query: string): Observable<Restaurant[]> {
     return from(this.restaurantsService.findByQuery(query));
+  }
+
+  @Get('/:id')
+  findOne(@Param('id') id: number): Observable<Restaurant> {
+    return from(this.restaurantsService.findOneById(id));
   }
 }

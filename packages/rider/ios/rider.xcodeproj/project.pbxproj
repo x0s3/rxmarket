@@ -19,6 +19,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* riderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* riderTests.m */; };
 		31F15DA02E865529D74EB301 /* libPods-rider-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89393924EF83BD8C35978068 /* libPods-rider-tvOS.a */; };
 		5E049F5C240C8A67A3905A6B /* libPods-riderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8181A66691E45C85236F37A3 /* libPods-riderTests.a */; };
+		8D35325922FCC1C9008E9E2C /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D35324922FCC1C9008E9E2C /* Ionicons.ttf */; };
 		FB5E2C702ACDF61985F0CB61 /* libPods-rider-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD7D3A5890F1D1DBFB1D93 /* libPods-rider-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		586B4CF06E5BBD4989067B11 /* Pods-rider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.release.xcconfig"; path = "Target Support Files/Pods-rider/Pods-rider.release.xcconfig"; sourceTree = "<group>"; };
 		8181A66691E45C85236F37A3 /* libPods-riderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-riderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89393924EF83BD8C35978068 /* libPods-rider-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rider-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D35324922FCC1C9008E9E2C /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
 		ACDD7D3A5890F1D1DBFB1D93 /* libPods-rider-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rider-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B389A48EBA0C3F5F0E2EE59E /* Pods-rider-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider-tvOS.release.xcconfig"; path = "Target Support Files/Pods-rider-tvOS/Pods-rider-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		B792B7EFB6642445E0B583E1 /* Pods-rider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.debug.xcconfig"; path = "Target Support Files/Pods-rider/Pods-rider.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8D35324022FCC1C9008E9E2C /* Fonts */,
 				13B07FAE1A68108700A75B9A /* rider */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* riderTests */,
@@ -195,6 +198,15 @@
 				41357303B4E2EE404554CF7B /* Pods-riderTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8D35324022FCC1C9008E9E2C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8D35324922FCC1C9008E9E2C /* Ionicons.ttf */,
+			);
+			name = Fonts;
+			path = ../../../Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D35325922FCC1C9008E9E2C /* Ionicons.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
