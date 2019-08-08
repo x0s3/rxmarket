@@ -14,7 +14,9 @@
     "lint": "tslint -p ."
   },
   "dependencies": {
+    "apollo-boost": "^0.4.3",
     "react": "16.8.6",
+    "react-apollo": "^3.0.0",
     "react-native": "0.60.4"
   },
   "devDependencies": {

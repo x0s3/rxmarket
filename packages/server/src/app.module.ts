@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { RestaurantsModule, UsersModule } from './api';
 import { Config } from './config';
+import { pubSubProvider } from './providers/pubSub';
 
 @Module({
   imports: [
@@ -20,11 +21,13 @@ import { Config } from './config';
     GraphQLModule.forRoot({
       typePaths: ['./**/*.graphql'],
       playground: true,
-      debug: true
+      debug: true,
+      installSubscriptionHandlers: true
     }),
     // AuthModule,
     UsersModule,
     RestaurantsModule
-  ]
+  ],
+  providers: [pubSubProvider]
 })
 export class AppModule {}

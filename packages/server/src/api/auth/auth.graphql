@@ -1,0 +1,16 @@
+type Mutation {
+  login(authLoginInput: AuthLoginInput): User
+}
+
+input AuthLoginInput {
+  email: String!
+  password: String!
+}
+
+type User {
+  id: Int!
+  firstName: String!
+  lastName: String
+  phone: String
+  email: String
+}
