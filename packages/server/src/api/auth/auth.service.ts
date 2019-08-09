@@ -19,10 +19,13 @@ export class AuthService {
     return null;
   }
 
-  async login(user: LoginCredentials) {
-    const payload = { email: user.email, password: user.password };
+  async login(credentials: LoginCredentials) {
+    const payload = { ...credentials };
+    const user = await this.usersService.findOne(credentials.email).toPromise();
+
     return {
-      access_token: this.jwtService.sign(payload)
+      access_token: this.jwtService.sign(payload),
+      ...user
     };
   }
 }

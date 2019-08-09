@@ -13,7 +13,7 @@ export const GET_RESTAURANTS = gql`
 `;
 
 export const GET_CHARACTERS = gql`
-  query getCharacters{
+  query getCharacters {
     characters(page: 2, filter: { name: "rick" }) {
       info {
         count

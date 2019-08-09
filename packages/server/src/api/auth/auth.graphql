@@ -1,5 +1,5 @@
 type Mutation {
-  login(authLoginInput: AuthLoginInput): User
+  login(authLoginInput: AuthLoginInput): AuthLoginResponse
 }
 
 input AuthLoginInput {
@@ -7,7 +7,8 @@ input AuthLoginInput {
   password: String!
 }
 
-type User {
+type AuthLoginResponse {
+  access_token: String!
   id: Int!
   firstName: String!
   lastName: String

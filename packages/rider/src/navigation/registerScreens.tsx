@@ -7,6 +7,7 @@ import { Home } from '../screens/Home';
 import { DRAWER_LEFT, HOME } from './constants';
 
 const apolloClient = new ApolloClient({
+  // link: new HttpLink({ uri: 'http://192.168.1.64:3000/graphql' }), @server endpoint
   link: new HttpLink({ uri: 'https://rickandmortyapi.com/graphql/' }),
   cache: new InMemoryCache()
 });

@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
-import { RestaurantsModule, UsersModule } from './api';
+import { AuthModule, RestaurantsModule, UsersModule } from './api';
 import { Config } from './config';
 import { pubSubProvider } from './providers/pubSub';
 
@@ -22,9 +22,12 @@ import { pubSubProvider } from './providers/pubSub';
       typePaths: ['./**/*.graphql'],
       playground: true,
       debug: true,
-      installSubscriptionHandlers: true
+      installSubscriptionHandlers: true,
+      resolverValidationOptions: {
+        requireResolversForResolveType: false
+      }
     }),
-    // AuthModule,
+    AuthModule,
     UsersModule,
     RestaurantsModule
   ],

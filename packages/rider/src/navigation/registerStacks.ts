@@ -1,4 +1,5 @@
 import { Navigation } from 'react-native-navigation';
+import { Colors } from 'react-native-ui-lib';
 import { loadIcons } from '../utils/getIcon';
 import { DRAWER_LEFT, HOME } from './constants';
 
@@ -19,6 +20,9 @@ export function initialStack(): void {
                   component: {
                     options: {
                       topBar: {
+                        background: {
+                          color: Colors.blue20
+                        },
                         leftButtons: [
                           {
                             id: 'leftDrawer',

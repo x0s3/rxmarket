@@ -1,4 +1,5 @@
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
+import { AUTH_USER } from 'core/src/graphql/mutations';
 import { GET_CHARACTERS } from 'core/src/graphql/querys';
 import React from 'react';
 import {
@@ -19,6 +20,19 @@ type THome = React.FC & { componentId: string };
 
 export const Home = React.memo<THome>(({ ...props }) => {
   const { data, loading } = useQuery(GET_CHARACTERS);
+  const [login, { data: authData }] = useMutation(AUTH_USER, {
+    // onCompleted: (d: any) =>
+    //   useApolloClient().writeData({
+    //     data: {
+    //       token: d.login.acces_token
+    //     }
+    //   }),
+    variables: {
+      email: 'x0s3.prog@gmail.com',
+      password: 'xose'
+    }
+  });
+
   useNavigationDrawer(props.componentId);
 
   return (
@@ -27,7 +41,7 @@ export const Home = React.memo<THome>(({ ...props }) => {
         <View paddingL-24>
           <View row spread bottom paddingR-24 style={styles.separator}>
             <Text text20>{'Rick & Morty'}</Text>
-            <Text text70 red20 marginB-10>
+            <Text onPress={login} text70 red20 marginB-10>
               Edit
             </Text>
           </View>

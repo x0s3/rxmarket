@@ -6,7 +6,11 @@ export class AuthResolver {
   constructor(private readonly authService: AuthService) {}
 
   @Mutation('login')
-  async login(@Args() req: any) {
+  async login(@Args({ transform: (r: any) => ({ ...r.authLoginInput }) })
+  req: {
+    email: string;
+    password: string;
+  }) {
     return this.authService.login(req);
   }
 }

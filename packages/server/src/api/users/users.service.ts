@@ -2,16 +2,16 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { from, Observable } from 'rxjs';
 import { Repository } from 'typeorm';
-import { Customer } from './users.entity';
+import { User } from './users.entity';
 
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectRepository(Customer)
-    private readonly userRepository: Repository<Customer>
+    @InjectRepository(User)
+    private readonly userRepository: Repository<User>
   ) {}
 
-  findOne(email: string): Observable<Customer> {
+  findOne(email: string): Observable<User> {
     return from(
       this.userRepository.findOneOrFail({
         where: {
@@ -21,7 +21,7 @@ export class UsersService {
     );
   }
 
-  findAll(): Observable<Customer[]> {
+  findAll(): Observable<User[]> {
     return from(
       this.userRepository.find({
         relations: ['restaurants']
