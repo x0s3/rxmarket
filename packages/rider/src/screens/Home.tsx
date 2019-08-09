@@ -75,6 +75,7 @@ const GridListItem = ({ item, index }: any) => {
   const itemSize =
     (Constants.screenWidth - GUTTER_SIZE * (NUMBER_OF_COLUMNS + 1)) /
     NUMBER_OF_COLUMNS;
+
   return (
     <View flex marginL-24={index % NUMBER_OF_COLUMNS !== 0} marginB-24>
       <View height={itemSize} bg-dark80>
