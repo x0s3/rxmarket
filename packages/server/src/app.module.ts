@@ -2,9 +2,13 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
-import { AuthModule, RestaurantsModule, UsersModule } from './api';
+import {
+  AuthModule,
+  RestaurantsModule,
+  RidersModule,
+  UsersModule
+} from './api';
 import { Config } from './config';
-import { pubSubProvider } from './providers/pubSub';
 
 @Module({
   imports: [
@@ -29,8 +33,8 @@ import { pubSubProvider } from './providers/pubSub';
     }),
     AuthModule,
     UsersModule,
-    RestaurantsModule
-  ],
-  providers: [pubSubProvider]
+    RestaurantsModule,
+    RidersModule
+  ]
 })
 export class AppModule {}

@@ -1,6 +1,7 @@
-import { useMutation, useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery, useSubscription } from '@apollo/react-hooks';
 import { AUTH_USER } from 'core/src/graphql/mutations';
 import { GET_CHARACTERS } from 'core/src/graphql/querys';
+import { SUBSCRIBE_TO_DELIVERIES } from 'core/src/graphql/subscriptions';
 import React from 'react';
 import {
   Alert,
@@ -19,6 +20,7 @@ const NUMBER_OF_COLUMNS = 2;
 type THome = React.FC & { componentId: string };
 
 export const Home = React.memo<THome>(({ ...props }) => {
+  const { data: deliveries } = useSubscription(SUBSCRIBE_TO_DELIVERIES);
   const { data, loading } = useQuery(GET_CHARACTERS);
   const [login, { data: authData }] = useMutation(AUTH_USER, {
     // onCompleted: (d: any) =>
@@ -34,6 +36,10 @@ export const Home = React.memo<THome>(({ ...props }) => {
   });
 
   useNavigationDrawer(props.componentId);
+
+  React.useEffect(() => {
+    console.warn(deliveries);
+  }, [deliveries]);
 
   return (
     <View useSafeArea flex>

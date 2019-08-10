@@ -1,0 +1,20 @@
+input GeoPosition {
+    latitude: String!
+    longitude: String!
+}
+
+type Mutation {
+    updateGeoPosition(position: GeoPosition): Dada
+}
+
+type Dada {
+    lastName:String
+}
+
+type Subscription {
+    getLiveDeliveries(deliveries: String): String
+}
+
+type Query {
+    getRiders: String
+}

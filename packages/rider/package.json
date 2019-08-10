@@ -16,13 +16,16 @@
   "dependencies": {
     "@apollo/react-hooks": "^3.0.0",
     "apollo-boost": "^0.4.3",
+    "apollo-link-ws": "^1.0.18",
+    "apollo-utilities": "^1.3.2",
     "core": "0.0.0",
     "graphql": "^14.4.2",
     "react": "16.8.6",
     "react-native": "0.60.4",
     "react-native-navigation": "3.0.0-alpha.11",
     "react-native-ui-lib": "^3.34.3",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-vector-icons": "^6.6.0",
+    "subscriptions-transport-ws": "^0.9.16"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

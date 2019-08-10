@@ -17,12 +17,15 @@ export class RidersResolvers {
     return from(this.ridersService.findAll({}));
   }
 
-  @Mutation()
-  updateGeoPosition(@Args('riderId') riderId: number): Observable<any> {
-    return from(this.ridersService.updateGeoPosition(riderId));
+  @Mutation('updateGeoPosition')
+  updateGeoPosition(@Args('position') args: any): Observable<any> {
+    this.pubSubService.publish('getLiveDeliveries', {
+      getLiveDeliveries: 'ITS WORKING'
+    });
+    return from(this.ridersService.updateGeoPosition(args));
   }
 
-  @Subscription()
+  @Subscription('getLiveDeliveries')
   getLiveDeliveries() {
     return this.pubSubService.asyncIterator('getLiveDeliveries');
   }

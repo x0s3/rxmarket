@@ -34,7 +34,9 @@ export class RidersService {
     );
   }
 
-  updateGeoPosition(id: number): Observable<UpdateResult> {
-    return from(this.riderRepository.update({ id }, { lastName: '' }));
+  updateGeoPosition(data: any): Observable<UpdateResult> {
+    return from(
+      this.riderRepository.update({ id: 1 }, { lastName: 'xose god' })
+    );
   }
 }
